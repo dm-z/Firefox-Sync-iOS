@@ -1,7 +1,9 @@
 FIrefox-sync-for-iOS
 ===============
 
-A standalone iOS client for Firefox Sync. Fork from https://github.com/mozilla-services/ios-sync-client
+Fork from https://github.com/mozilla-services/ios-sync-client
+
+A standalone iOS client for Firefox Sync. 
 
 Compatibility
 -------------
