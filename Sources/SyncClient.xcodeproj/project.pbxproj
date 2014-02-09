@@ -522,7 +522,7 @@
 		F805D81E1296E2B60064C06D /* jpake.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jpake.c; sourceTree = "<group>"; };
 		F805D81F1296E2B60064C06D /* jpake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpake.h; sourceTree = "<group>"; };
 		F83E0F7C129E0CB000FE5CF2 /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F83E0F7D129E0CB000FE5CF2 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		F83E0F7D129E0CB000FE5CF2 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F83E0F87129E0CE000FE5CF2 /* NSData+EncodingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+EncodingTest.h"; sourceTree = "<group>"; };
 		F83E0F88129E0CE000FE5CF2 /* NSData+EncodingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+EncodingTest.m"; sourceTree = "<group>"; };
 		F83E0FB2129E0F9400FE5CF2 /* KeyDerivationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyDerivationTest.h; sourceTree = "<group>"; };
@@ -634,9 +634,6 @@
 		F85EEAE71281AFAA00948A57 /* x509v3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
 		F85EEAE91281AFAA00948A57 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		F85EEAEA1281AFAA00948A57 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
-		F85EEC081281B19E00948A57 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = iphoneos4.0/System/Library/Frameworks/CFNetwork.framework; sourceTree = "<group>"; };
-		F85EEC0D1281B1AF00948A57 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = iphoneos4.0/usr/lib/libz.dylib; sourceTree = "<group>"; };
-		F85EEC111281B1B600948A57 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = iphoneos4.0/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = "<group>"; };
 		F85EEC171281B1CC00948A57 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		F85EEC181281B1CC00948A57 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		F87B815B12F7415C00389567 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -675,7 +672,6 @@
 		F8A7985B128850B900AB5072 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		F8A7985D128850B900AB5072 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		F8A798931288582400AB5072 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
-		F8B3E3F5126F1F60008178BA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = iphoneos4.0/System/Library/Frameworks/MessageUI.framework; sourceTree = "<group>"; };
 		F8B4661F12AD9C4000828D26 /* NSData+WeaveKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+WeaveKeys.h"; sourceTree = "<group>"; };
 		F8B4662012AD9C4000828D26 /* NSData+WeaveKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+WeaveKeys.m"; sourceTree = "<group>"; };
 		F8BDA40B12EA708B008A1164 /* NSData+AESTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AESTest.h"; sourceTree = "<group>"; };
@@ -819,25 +815,15 @@
 		29B97314FDCFA39411CA2CEA /* Weave */ = {
 			isa = PBXGroup;
 			children = (
-				F85EE8DE1281AFAA00948A57 /* ExternalSources */,
 				376EA60110D037CF00D37DD3 /* UserInterface */,
-				F892B79F1284412A00F876B3 /* Utilities */,
-				080E96DDFE201D6D7F000001 /* NetworkAndStorage */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				080E96DDFE201D6D7F000001 /* NetworkAndStorage */,
+				F892B79F1284412A00F876B3 /* Utilities */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				F85EE8DE1281AFAA00948A57 /* ExternalSources */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				F8A798931288582400AB5072 /* libicucore.dylib */,
-				F83E0F7D129E0CB000FE5CF2 /* Tests-Info.plist */,
 				F83E0FB1129E0F8500FE5CF2 /* Tests */,
-				F857244512AEE15E00A192F4 /* CFNetwork.framework */,
-				F857244712AEE16300A192F4 /* MobileCoreServices.framework */,
-				F857244912AEE16800A192F4 /* SystemConfiguration.framework */,
-				F857245112AEE19800A192F4 /* QuartzCore.framework */,
-				F857245412AEE1A000A192F4 /* libz.dylib */,
-				F857245C12AEE25400A192F4 /* Foundation.framework */,
-				F857245E12AEE25700A192F4 /* UIKit.framework */,
-				F857246512AEE28200A192F4 /* CoreGraphics.framework */,
 			);
 			name = Weave;
 			sourceTree = "<group>";
@@ -854,13 +840,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F801888E127115AA00215F00 /* Settings.bundle */,
-				37CEC7DB1214B563001F5DB3 /* Xibs */,
-				E691FF68121B4F8C00C82F9F /* Localizable.strings */,
 				4AFBD411108BC64700C4FD32 /* Images */,
+				E691FF68121B4F8C00C82F9F /* Localizable.strings */,
 				4AFBD420108BC64E00C4FD32 /* ffhomeDB.sq3 */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				4A275D8D10925B740021DCB4 /* NetworkPaths.plist */,
+				F801888E127115AA00215F00 /* Settings.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -868,6 +853,15 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F8A798931288582400AB5072 /* libicucore.dylib */,
+				F857244512AEE15E00A192F4 /* CFNetwork.framework */,
+				F857244712AEE16300A192F4 /* MobileCoreServices.framework */,
+				F857244912AEE16800A192F4 /* SystemConfiguration.framework */,
+				F857245112AEE19800A192F4 /* QuartzCore.framework */,
+				F857245412AEE1A000A192F4 /* libz.dylib */,
+				F857245C12AEE25400A192F4 /* Foundation.framework */,
+				F857245E12AEE25700A192F4 /* UIKit.framework */,
+				F857246512AEE28200A192F4 /* CoreGraphics.framework */,
 				4AFBD435108BC67500C4FD32 /* Security.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -875,10 +869,6 @@
 				4AFBD479108BC68500C4FD32 /* libsqlite3.0.dylib */,
 				4AFBD47B108BC68A00C4FD32 /* QuartzCore.framework */,
 				4AFBD47F108BC68F00C4FD32 /* SystemConfiguration.framework */,
-				F8B3E3F5126F1F60008178BA /* MessageUI.framework */,
-				F85EEC081281B19E00948A57 /* CFNetwork.framework */,
-				F85EEC0D1281B1AF00948A57 /* libz.dylib */,
-				F85EEC111281B1B600948A57 /* MobileCoreServices.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -886,6 +876,7 @@
 		376EA60110D037CF00D37DD3 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				37CEC7DB1214B563001F5DB3 /* Xibs */,
 				E68F3FFB11A5F7A80094450B /* WelcomePage.h */,
 				E68F3FFC11A5F7A80094450B /* WelcomePage.m */,
 				E62E983B11A70F4500B56879 /* AccountHelp.h */,
@@ -914,10 +905,8 @@
 				37A682B210E148BC008005DC /* TapActionController.m */,
 				F8454510128B019F006A8302 /* EasySetupViewController.h */,
 				F8454511128B019F006A8302 /* EasySetupViewController.m */,
-				F8CD9D1E12A5706B00CB1A2B /* EasySetupViewController.xib */,
 				F8F8D84D1292FD0C00DED5CE /* ManualSetupViewController.h */,
 				F8F8D84E1292FD0C00DED5CE /* ManualSetupViewController.m */,
-				F8CD9D0A12A5705100CB1A2B /* ManualSetupViewController.xib */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
@@ -997,6 +986,8 @@
 		37CEC7DB1214B563001F5DB3 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				F8CD9D1E12A5706B00CB1A2B /* EasySetupViewController.xib */,
+				F8CD9D0A12A5705100CB1A2B /* ManualSetupViewController.xib */,
 				E691FF96121B53B800C82F9F /* AboutScreen.xib */,
 				E691FF7F121B52BF00C82F9F /* AccountHelp.xib */,
 				37CEC8131214B672001F5DB3 /* AuthDialog.xib */,
@@ -1010,6 +1001,7 @@
 				37CEC82B1214B672001F5DB3 /* WelcomePage.xib */,
 			);
 			name = Xibs;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		4AFBD411108BC64700C4FD32 /* Images */ = {
@@ -1074,6 +1066,7 @@
 		F83E0FB1129E0F8500FE5CF2 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				F83E0F7D129E0CB000FE5CF2 /* Tests-Info.plist */,
 				F83E0FB2129E0F9400FE5CF2 /* KeyDerivationTest.h */,
 				F83E0FB3129E0F9400FE5CF2 /* KeyDerivationTest.m */,
 			);
@@ -1367,6 +1360,8 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SyncClient" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
@@ -1938,6 +1933,7 @@
 				F8CD9D1C12A5705100CB1A2B /* zh-Hant */,
 			);
 			name = ManualSetupViewController.xib;
+			path = UserInterface;
 			sourceTree = "<group>";
 		};
 		F8CD9D1E12A5706B00CB1A2B /* EasySetupViewController.xib */ = {
@@ -1963,6 +1959,7 @@
 				F8CD9D3012A5706B00CB1A2B /* zh-Hans */,
 			);
 			name = EasySetupViewController.xib;
+			path = UserInterface;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
