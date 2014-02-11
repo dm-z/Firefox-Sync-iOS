@@ -53,6 +53,7 @@
 		4AFBD436108BC67500C4FD32 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFBD435108BC67500C4FD32 /* Security.framework */; };
 		4AFBD47A108BC68500C4FD32 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFBD479108BC68500C4FD32 /* libsqlite3.0.dylib */; };
 		4AFBD47C108BC68A00C4FD32 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFBD47B108BC68A00C4FD32 /* QuartzCore.framework */; };
+		B8CC90BCFDA08BDE67E43803 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CC9452906C7E3A2C8C2972 /* Default-568h@2x.png */; };
 		E62E983E11A70F4500B56879 /* AccountHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = E62E983C11A70F4500B56879 /* AccountHelp.m */; };
 		E65DB0D911CAF5C500FBF52E /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E65DB0D811CAF5C500FBF52E /* KeychainItemWrapper.m */; };
 		E67B8E5111C83F5E00A31688 /* AuthDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E67B8E4F11C83F5E00A31688 /* AuthDialog.m */; };
@@ -306,6 +307,7 @@
 		4AFBD47B108BC68A00C4FD32 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		4AFBD47F108BC68F00C4FD32 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		B8CC9452906C7E3A2C8C2972 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		E62E983B11A70F4500B56879 /* AccountHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountHelp.h; sourceTree = "<group>"; };
 		E62E983C11A70F4500B56879 /* AccountHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountHelp.m; sourceTree = "<group>"; };
 		E65DB0D711CAF5C500FBF52E /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
@@ -1059,6 +1061,7 @@
 				F8018D47127234DE00215F00 /* Tabs@2x.png */,
 				F8018E5C12725C6F00215F00 /* Background.png */,
 				F8018E5D12725C6F00215F00 /* Background@2x.png */,
+				B8CC9452906C7E3A2C8C2972 /* Default-568h@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1480,6 +1483,7 @@
 				F8018E5F12725C6F00215F00 /* Background@2x.png in Resources */,
 				F8CD9D1D12A5705100CB1A2B /* ManualSetupViewController.xib in Resources */,
 				F8CD9D3112A5706B00CB1A2B /* EasySetupViewController.xib in Resources */,
+				B8CC90BCFDA08BDE67E43803 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
