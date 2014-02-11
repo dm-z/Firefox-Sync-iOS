@@ -39,6 +39,7 @@
 #import "AccountHelp.h"
 #import "WeaveAppDelegate.h"
 #import "JPAKEReporter.h"
+#import "UIColor+appColors.h"
 
 JPAKEReporter* gSharedReporter = nil;
 
@@ -58,6 +59,13 @@ JPAKEReporter* gSharedReporter = nil;
 		_helpButton.titleLabel.font = [UIFont fontWithName: _helpButton.titleLabel.font.fontName
 			size: _helpButton.titleLabel.font.pointSize - 2.0];
 	}
+
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
+    {
+        self.setupButton.backgroundColor = [UIColor blueColor];
+        self.setupButton.layer.cornerRadius = 4.0f;
+        [self.setupButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    }
 }
 
 #pragma mark -

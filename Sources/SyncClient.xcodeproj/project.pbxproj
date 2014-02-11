@@ -62,6 +62,7 @@
 		E691FF69121B4F8C00C82F9F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E691FF68121B4F8C00C82F9F /* Localizable.strings */; };
 		E691FF80121B52BF00C82F9F /* AccountHelp.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF7F121B52BF00C82F9F /* AccountHelp.xib */; };
 		E691FF97121B53B800C82F9F /* AboutScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF96121B53B800C82F9F /* AboutScreen.xib */; };
+		F788DD2B18AA50A00045318F /* UIColor+appColors.m in Sources */ = {isa = PBXBuildFile; fileRef = F788DD2A18AA50A00045318F /* UIColor+appColors.m */; };
 		F801888F127115AA00215F00 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F801888E127115AA00215F00 /* Settings.bundle */; };
 		F8018D4C127234DE00215F00 /* Action.png in Resources */ = {isa = PBXBuildFile; fileRef = F8018D0E127234DE00215F00 /* Action.png */; };
 		F8018D4D127234DE00215F00 /* backward.png in Resources */ = {isa = PBXBuildFile; fileRef = F8018D0F127234DE00215F00 /* backward.png */; };
@@ -467,6 +468,8 @@
 		E6E583BB1219F25F00A06C45 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/TabBrowserController.xib; sourceTree = "<group>"; };
 		E6E583BC1219F26600A06C45 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/WebPageController.xib; sourceTree = "<group>"; };
 		E6E583BD1219F26E00A06C45 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/WelcomePage.xib; sourceTree = "<group>"; };
+		F788DD2918AA50A00045318F /* UIColor+appColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+appColors.h"; sourceTree = "<group>"; };
+		F788DD2A18AA50A00045318F /* UIColor+appColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+appColors.m"; sourceTree = "<group>"; };
 		F801888E127115AA00215F00 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		F8018D0E127234DE00215F00 /* Action.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Action.png; sourceTree = "<group>"; };
 		F8018D0F127234DE00215F00 /* backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backward.png; sourceTree = "<group>"; };
@@ -817,6 +820,7 @@
 		29B97314FDCFA39411CA2CEA /* Weave */ = {
 			isa = PBXGroup;
 			children = (
+				F788DD2818AA504B0045318F /* Helpers */,
 				376EA60110D037CF00D37DD3 /* UserInterface */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				080E96DDFE201D6D7F000001 /* NetworkAndStorage */,
@@ -1064,6 +1068,15 @@
 				B8CC9452906C7E3A2C8C2972 /* Default-568h@2x.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		F788DD2818AA504B0045318F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F788DD2918AA50A00045318F /* UIColor+appColors.h */,
+				F788DD2A18AA50A00045318F /* UIColor+appColors.m */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		F83E0FB1129E0F8500FE5CF2 /* Tests */ = {
@@ -1526,6 +1539,7 @@
 				378FC17D10D82BEA0010D3C9 /* SBJsonBase.m in Sources */,
 				378FC17E10D82BEA0010D3C9 /* SBJsonParser.m in Sources */,
 				378FC17F10D82BEA0010D3C9 /* SBJsonWriter.m in Sources */,
+				F788DD2B18AA50A00045318F /* UIColor+appColors.m in Sources */,
 				378FC18110D82BEA0010D3C9 /* Stockboy.m in Sources */,
 				378FC18210D82BEA0010D3C9 /* Store.m in Sources */,
 				378FC18310D82BEA0010D3C9 /* Utility.m in Sources */,
