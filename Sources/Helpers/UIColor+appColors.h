@@ -10,7 +10,6 @@
 
 @interface UIColor (appColors)
 
-+ (UIColor *)screenBackgroundColor;
-+ (UIImage *)imageWithColor:(UIColor *)color;
++ (UIColor *)buttonsColor;
 
 @end

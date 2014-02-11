@@ -46,29 +46,34 @@ JPAKEReporter* gSharedReporter = nil;
 @implementation WelcomePage
 
 @synthesize setupButton = _setupButton;
-@synthesize helpButton = _helpButton;
 
-#pragma mark -
+#pragma mark - view lifecycle
 
 - (void) viewDidLoad
 {
-	NSString* language = [[NSLocale preferredLanguages] objectAtIndex: 0];
+    NSString* language = [[NSLocale preferredLanguages] objectAtIndex: 0];
 	if ([language isEqualToString: @"ru"] || [language isEqualToString: @"id"]) {
 		_setupButton.titleLabel.font = [UIFont fontWithName: _setupButton.titleLabel.font.fontName
 			size: _setupButton.titleLabel.font.pointSize - 2.0];
-		_helpButton.titleLabel.font = [UIFont fontWithName: _helpButton.titleLabel.font.fontName
-			size: _helpButton.titleLabel.font.pointSize - 2.0];
 	}
 
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
     {
-        self.setupButton.backgroundColor = [UIColor blueColor];
+        self.setupButton.backgroundColor = [UIColor buttonsColor];
         self.setupButton.layer.cornerRadius = 4.0f;
         [self.setupButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     }
+    [self setupLocaleStrings];
 }
 
-#pragma mark -
+#pragma mark - private
+
+- (void)setupLocaleStrings
+{
+    self.titleLabel.text = NSLocalizedString(@"SyncClient requires a Firefox Sync account. Use Firefox on your computer to create an account.",);
+    [self.setupButton setTitle:NSLocalizedString(@"I Have A Sync Account",) forState:UIControlStateNormal];
+    [self.setupButton setTitle:NSLocalizedString(@"I Have A Sync Account",) forState:UIControlStateHighlighted];
+}
 
 - (void) manualSetupViewControllerDidLogin: (ManualSetupViewController*) vc
 {
@@ -121,7 +126,7 @@ JPAKEReporter* gSharedReporter = nil;
 	}
 }
 
-#pragma mark -
+#pragma mark - actions
 
 - (IBAction) presentEasySetupViewController;
 {
@@ -155,12 +160,12 @@ JPAKEReporter* gSharedReporter = nil;
 	}
 }
 
-- (IBAction) presentAccountHelpViewController;
-{
-	AccountHelp* accountHelp = [[AccountHelp new] autorelease];
-	if (accountHelp != nil) {
-		[self presentModalViewController: accountHelp animated:YES];
-	}
+- (void)dealloc {
+    [_titleLabel release];
+    [super dealloc];
 }
-
+- (void)viewDidUnload {
+    [self setTitleLabel:nil];
+    [super viewDidUnload];
+}
 @end

@@ -10,26 +10,9 @@
 
 @implementation UIColor (appColors)
 
-+ (UIColor *)screenBackgroundColor
++ (UIColor *)buttonsColor
 {
-    return [UIColor colorWithRed:73/255
-                    green:169/255
-                     blue:220/255
-                    alpha:1];
-}
-
-+ (UIImage *)imageWithColor:(UIColor *)color {
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-
-    return image;
+    return [UIColor colorWithRed:0.35f green:0.35f blue:0.81f alpha:1.0f];
 }
 
 @end

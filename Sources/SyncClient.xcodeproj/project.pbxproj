@@ -45,7 +45,6 @@
 		37CEC8231214B672001F5DB3 /* SettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CEC8221214B672001F5DB3 /* SettingsController.xib */; };
 		37CEC8261214B672001F5DB3 /* TabBrowserController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CEC8251214B672001F5DB3 /* TabBrowserController.xib */; };
 		37CEC8291214B672001F5DB3 /* WebPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CEC8281214B672001F5DB3 /* WebPageController.xib */; };
-		37CEC82C1214B672001F5DB3 /* WelcomePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CEC82B1214B672001F5DB3 /* WelcomePage.xib */; };
 		37E8731711D3D5FE0004292A /* AboutScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E8731511D3D5FE0004292A /* AboutScreen.m */; };
 		37ED0D3A1167188700E04CAE /* BookmarkPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ED0D381167188700E04CAE /* BookmarkPage.m */; };
 		4A275D8E10925B740021DCB4 /* NetworkPaths.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A275D8D10925B740021DCB4 /* NetworkPaths.plist */; };
@@ -63,6 +62,7 @@
 		E691FF80121B52BF00C82F9F /* AccountHelp.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF7F121B52BF00C82F9F /* AccountHelp.xib */; };
 		E691FF97121B53B800C82F9F /* AboutScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF96121B53B800C82F9F /* AboutScreen.xib */; };
 		F788DD2B18AA50A00045318F /* UIColor+appColors.m in Sources */ = {isa = PBXBuildFile; fileRef = F788DD2A18AA50A00045318F /* UIColor+appColors.m */; };
+		F78E38DA18AA6DB400BBD2E5 /* WelcomePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78E38D918AA6DB400BBD2E5 /* WelcomePage.xib */; };
 		F801888F127115AA00215F00 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F801888E127115AA00215F00 /* Settings.bundle */; };
 		F8018D4C127234DE00215F00 /* Action.png in Resources */ = {isa = PBXBuildFile; fileRef = F8018D0E127234DE00215F00 /* Action.png */; };
 		F8018D4D127234DE00215F00 /* backward.png in Resources */ = {isa = PBXBuildFile; fileRef = F8018D0F127234DE00215F00 /* backward.png */; };
@@ -280,7 +280,6 @@
 		37CEC7E81214B5D9001F5DB3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/SettingsController.xib; sourceTree = "<group>"; };
 		37CEC7E91214B5D9001F5DB3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/TabBrowserController.xib; sourceTree = "<group>"; };
 		37CEC7EA1214B5D9001F5DB3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/WebPageController.xib; sourceTree = "<group>"; };
-		37CEC7EB1214B5D9001F5DB3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/WelcomePage.xib; sourceTree = "<group>"; };
 		37CEC8791214C39B001F5DB3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/AuthDialog.xib; sourceTree = "<group>"; };
 		37CEC87C1214C3B8001F5DB3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/LogoutController.xib; sourceTree = "<group>"; };
 		37CEC87D1214C3C2001F5DB3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/MainWindow.xib; sourceTree = "<group>"; };
@@ -288,7 +287,6 @@
 		37CEC87F1214C3D3001F5DB3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/SettingsController.xib; sourceTree = "<group>"; };
 		37CEC8801214C3DE001F5DB3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/TabBrowserController.xib; sourceTree = "<group>"; };
 		37CEC8811214C3E6001F5DB3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/WebPageController.xib; sourceTree = "<group>"; };
-		37CEC8821214C3EF001F5DB3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/WelcomePage.xib; sourceTree = "<group>"; };
 		37CEC8F21215123C001F5DB3 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/AuthDialog.xib; sourceTree = "<group>"; };
 		37CEC8F412151255001F5DB3 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/LogoutController.xib; sourceTree = "<group>"; };
 		37CEC8F51215125C001F5DB3 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/MainWindow.xib; sourceTree = "<group>"; };
@@ -296,7 +294,6 @@
 		37CEC8F71215126B001F5DB3 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/SettingsController.xib; sourceTree = "<group>"; };
 		37CEC8F812151273001F5DB3 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/TabBrowserController.xib; sourceTree = "<group>"; };
 		37CEC8F91215127A001F5DB3 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/WebPageController.xib; sourceTree = "<group>"; };
-		37CEC8FA12151281001F5DB3 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/WelcomePage.xib; sourceTree = "<group>"; };
 		37E8731411D3D5FE0004292A /* AboutScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutScreen.h; sourceTree = "<group>"; };
 		37E8731511D3D5FE0004292A /* AboutScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutScreen.m; sourceTree = "<group>"; };
 		37ED0D371167188700E04CAE /* BookmarkPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookmarkPage.h; sourceTree = "<group>"; };
@@ -324,7 +321,6 @@
 		E689BCE81215C80100CE918D /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/SettingsController.xib; sourceTree = "<group>"; };
 		E689BCE91215C80800CE918D /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/TabBrowserController.xib; sourceTree = "<group>"; };
 		E689BCEA1215C81000CE918D /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/WebPageController.xib; sourceTree = "<group>"; };
-		E689BCEB1215C81700CE918D /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/WelcomePage.xib; sourceTree = "<group>"; };
 		E689BD261215E7C300CE918D /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/AuthDialog.xib; sourceTree = "<group>"; };
 		E689BD281215E7D300CE918D /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/LogoutController.xib; sourceTree = "<group>"; };
 		E689BD291215E7DF00CE918D /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/MainWindow.xib; sourceTree = "<group>"; };
@@ -332,7 +328,6 @@
 		E689BD2B1215E7F000CE918D /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/SettingsController.xib; sourceTree = "<group>"; };
 		E689BD2C1215E7FA00CE918D /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/TabBrowserController.xib; sourceTree = "<group>"; };
 		E689BD2D1215E80200CE918D /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/WebPageController.xib; sourceTree = "<group>"; };
-		E689BD2E1215E80900CE918D /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/WelcomePage.xib; sourceTree = "<group>"; };
 		E689BD3B1215EB8700CE918D /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/AuthDialog.xib; sourceTree = "<group>"; };
 		E689BD3D1215EB9700CE918D /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/LogoutController.xib; sourceTree = "<group>"; };
 		E689BD3E1215EB9E00CE918D /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/MainWindow.xib; sourceTree = "<group>"; };
@@ -340,7 +335,6 @@
 		E689BD401215EBB100CE918D /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/SettingsController.xib; sourceTree = "<group>"; };
 		E689BD411215EBB800CE918D /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/TabBrowserController.xib; sourceTree = "<group>"; };
 		E689BD421215EBC000CE918D /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/WebPageController.xib; sourceTree = "<group>"; };
-		E689BD431215EBC800CE918D /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/WelcomePage.xib; sourceTree = "<group>"; };
 		E689BD4E1215EDE500CE918D /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/AuthDialog.xib; sourceTree = "<group>"; };
 		E689BD501215EDFA00CE918D /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/LogoutController.xib; sourceTree = "<group>"; };
 		E689BD511215EE0200CE918D /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/MainWindow.xib; sourceTree = "<group>"; };
@@ -348,7 +342,6 @@
 		E689BD531215EE1000CE918D /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/SettingsController.xib; sourceTree = "<group>"; };
 		E689BD541215EE1700CE918D /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/TabBrowserController.xib; sourceTree = "<group>"; };
 		E689BD551215EE1E00CE918D /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/WebPageController.xib; sourceTree = "<group>"; };
-		E689BD561215EE2600CE918D /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/WelcomePage.xib; sourceTree = "<group>"; };
 		E68F3FFB11A5F7A80094450B /* WelcomePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomePage.h; sourceTree = "<group>"; };
 		E68F3FFC11A5F7A80094450B /* WelcomePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomePage.m; sourceTree = "<group>"; };
 		E691FEFC121B2C8C00C82F9F /* ca */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ca; path = ca.lproj/AuthDialog.xib; sourceTree = "<group>"; };
@@ -358,7 +351,6 @@
 		E691FF01121B2CAF00C82F9F /* ca */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ca; path = ca.lproj/SettingsController.xib; sourceTree = "<group>"; };
 		E691FF02121B2CB500C82F9F /* ca */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ca; path = ca.lproj/TabBrowserController.xib; sourceTree = "<group>"; };
 		E691FF03121B2CBC00C82F9F /* ca */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ca; path = ca.lproj/WebPageController.xib; sourceTree = "<group>"; };
-		E691FF04121B2CC100C82F9F /* ca */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ca; path = ca.lproj/WelcomePage.xib; sourceTree = "<group>"; };
 		E691FF08121B2D4900C82F9F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/AuthDialog.xib; sourceTree = "<group>"; };
 		E691FF0A121B2D5700C82F9F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/LogoutController.xib; sourceTree = "<group>"; };
 		E691FF0B121B2D5E00C82F9F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/MainWindow.xib; sourceTree = "<group>"; };
@@ -366,7 +358,6 @@
 		E691FF0D121B2D6B00C82F9F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/SettingsController.xib; sourceTree = "<group>"; };
 		E691FF0E121B2D7900C82F9F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/TabBrowserController.xib; sourceTree = "<group>"; };
 		E691FF0F121B2D8000C82F9F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/WebPageController.xib; sourceTree = "<group>"; };
-		E691FF10121B2D8600C82F9F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/WelcomePage.xib; sourceTree = "<group>"; };
 		E691FF14121B2E4300C82F9F /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/AuthDialog.xib; sourceTree = "<group>"; };
 		E691FF16121B2E5300C82F9F /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/LogoutController.xib; sourceTree = "<group>"; };
 		E691FF17121B2E5900C82F9F /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/MainWindow.xib; sourceTree = "<group>"; };
@@ -374,7 +365,6 @@
 		E691FF19121B2E6700C82F9F /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/SettingsController.xib; sourceTree = "<group>"; };
 		E691FF1A121B2E6D00C82F9F /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/TabBrowserController.xib; sourceTree = "<group>"; };
 		E691FF1B121B2E7300C82F9F /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/WebPageController.xib; sourceTree = "<group>"; };
-		E691FF1C121B2E7800C82F9F /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/WelcomePage.xib; sourceTree = "<group>"; };
 		E691FF6B121B4FD700C82F9F /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E691FF6C121B4FDB00C82F9F /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E691FF6D121B4FE300C82F9F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -431,8 +421,6 @@
 		E691FFB4121B54FA00C82F9F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/TabBrowserController.xib"; sourceTree = "<group>"; };
 		E691FFB5121B550700C82F9F /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/WebPageController.xib; sourceTree = "<group>"; };
 		E691FFB6121B550D00C82F9F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/WebPageController.xib"; sourceTree = "<group>"; };
-		E691FFB7121B551900C82F9F /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/WelcomePage.xib; sourceTree = "<group>"; };
-		E691FFB8121B552100C82F9F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/WelcomePage.xib"; sourceTree = "<group>"; };
 		E6C6EBB7121C685F009A36DD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E6C6EBB8121C68BD009A36DD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/AboutScreen.xib"; sourceTree = "<group>"; };
 		E6C6EBB9121C68CC009A36DD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/AccountHelp.xib"; sourceTree = "<group>"; };
@@ -443,7 +431,6 @@
 		E6C6EBBF121C6907009A36DD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/SettingsController.xib"; sourceTree = "<group>"; };
 		E6C6EBC0121C6910009A36DD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/TabBrowserController.xib"; sourceTree = "<group>"; };
 		E6C6EBC1121C6921009A36DD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/WebPageController.xib"; sourceTree = "<group>"; };
-		E6C6EBC2121C692A009A36DD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/WelcomePage.xib"; sourceTree = "<group>"; };
 		E6E583851219EC6800A06C45 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/AuthDialog.xib; sourceTree = "<group>"; };
 		E6E583871219EC7F00A06C45 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/LogoutController.xib; sourceTree = "<group>"; };
 		E6E583881219EC8800A06C45 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/MainWindow.xib; sourceTree = "<group>"; };
@@ -451,7 +438,6 @@
 		E6E5838A1219EC9600A06C45 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/SettingsController.xib; sourceTree = "<group>"; };
 		E6E5838B1219EC9D00A06C45 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/TabBrowserController.xib; sourceTree = "<group>"; };
 		E6E5838C1219ECA700A06C45 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/WebPageController.xib; sourceTree = "<group>"; };
-		E6E5838D1219ECAE00A06C45 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/WelcomePage.xib; sourceTree = "<group>"; };
 		E6E583A91219F11700A06C45 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/AuthDialog.xib; sourceTree = "<group>"; };
 		E6E583AB1219F12800A06C45 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/LogoutController.xib; sourceTree = "<group>"; };
 		E6E583AC1219F12F00A06C45 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/MainWindow.xib; sourceTree = "<group>"; };
@@ -459,7 +445,6 @@
 		E6E583AE1219F13C00A06C45 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/SettingsController.xib; sourceTree = "<group>"; };
 		E6E583AF1219F14300A06C45 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/TabBrowserController.xib; sourceTree = "<group>"; };
 		E6E583B01219F14A00A06C45 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/WebPageController.xib; sourceTree = "<group>"; };
-		E6E583B11219F15400A06C45 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/WelcomePage.xib; sourceTree = "<group>"; };
 		E6E583B51219F23100A06C45 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/AuthDialog.xib; sourceTree = "<group>"; };
 		E6E583B71219F24200A06C45 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/LogoutController.xib; sourceTree = "<group>"; };
 		E6E583B81219F24900A06C45 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainWindow.xib; sourceTree = "<group>"; };
@@ -467,9 +452,9 @@
 		E6E583BA1219F25800A06C45 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/SettingsController.xib; sourceTree = "<group>"; };
 		E6E583BB1219F25F00A06C45 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/TabBrowserController.xib; sourceTree = "<group>"; };
 		E6E583BC1219F26600A06C45 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/WebPageController.xib; sourceTree = "<group>"; };
-		E6E583BD1219F26E00A06C45 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/WelcomePage.xib; sourceTree = "<group>"; };
 		F788DD2918AA50A00045318F /* UIColor+appColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+appColors.h"; sourceTree = "<group>"; };
 		F788DD2A18AA50A00045318F /* UIColor+appColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+appColors.m"; sourceTree = "<group>"; };
+		F78E38D918AA6DB400BBD2E5 /* WelcomePage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WelcomePage.xib; path = Xibs/WelcomePage.xib; sourceTree = "<group>"; };
 		F801888E127115AA00215F00 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		F8018D0E127234DE00215F00 /* Action.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Action.png; sourceTree = "<group>"; };
 		F8018D0F127234DE00215F00 /* backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backward.png; sourceTree = "<group>"; };
@@ -651,7 +636,6 @@
 		F87B816312F741B500389567 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/SettingsController.xib"; sourceTree = "<group>"; };
 		F87B816412F741BA00389567 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/TabBrowserController.xib"; sourceTree = "<group>"; };
 		F87B816512F741C000389567 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/WebPageController.xib"; sourceTree = "<group>"; };
-		F87B816612F741C500389567 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/WelcomePage.xib"; sourceTree = "<group>"; };
 		F883099812B0432200035A06 /* NSData+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Random.h"; sourceTree = "<group>"; };
 		F883099912B0432200035A06 /* NSData+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Random.m"; sourceTree = "<group>"; };
 		F88309CA12B046AE00035A06 /* NSData+RandomTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+RandomTest.h"; sourceTree = "<group>"; };
@@ -728,7 +712,6 @@
 		F8CD9D3B12A5759000CB1A2B /* th */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = th; path = th.lproj/SettingsController.xib; sourceTree = "<group>"; };
 		F8CD9D3C12A5759600CB1A2B /* th */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = th; path = th.lproj/TabBrowserController.xib; sourceTree = "<group>"; };
 		F8CD9D3D12A5759B00CB1A2B /* th */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = th; path = th.lproj/WebPageController.xib; sourceTree = "<group>"; };
-		F8CD9D3E12A575A000CB1A2B /* th */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = th; path = th.lproj/WelcomePage.xib; sourceTree = "<group>"; };
 		F8CD9D3F12A575D000CB1A2B /* id */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = id; path = id.lproj/AboutScreen.xib; sourceTree = "<group>"; };
 		F8CD9D4012A575D600CB1A2B /* id */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = id; path = id.lproj/AccountHelp.xib; sourceTree = "<group>"; };
 		F8CD9D4112A575DB00CB1A2B /* id */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = id; path = id.lproj/AuthDialog.xib; sourceTree = "<group>"; };
@@ -738,7 +721,6 @@
 		F8CD9D4512A5760000CB1A2B /* id */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = id; path = id.lproj/SettingsController.xib; sourceTree = "<group>"; };
 		F8CD9D4612A5760500CB1A2B /* id */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = id; path = id.lproj/TabBrowserController.xib; sourceTree = "<group>"; };
 		F8CD9D4712A5760A00CB1A2B /* id */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = id; path = id.lproj/WebPageController.xib; sourceTree = "<group>"; };
-		F8CD9D4812A5760F00CB1A2B /* id */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = id; path = id.lproj/WelcomePage.xib; sourceTree = "<group>"; };
 		F8CD9D4912A5761900CB1A2B /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F8CD9D4A12A5761B00CB1A2B /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F8F8D84D1292FD0C00DED5CE /* ManualSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManualSetupViewController.h; sourceTree = "<group>"; };
@@ -992,6 +974,7 @@
 		37CEC7DB1214B563001F5DB3 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				F78E38D918AA6DB400BBD2E5 /* WelcomePage.xib */,
 				F8CD9D1E12A5706B00CB1A2B /* EasySetupViewController.xib */,
 				F8CD9D0A12A5705100CB1A2B /* ManualSetupViewController.xib */,
 				E691FF96121B53B800C82F9F /* AboutScreen.xib */,
@@ -1004,7 +987,6 @@
 				37CEC8221214B672001F5DB3 /* SettingsController.xib */,
 				37CEC8251214B672001F5DB3 /* TabBrowserController.xib */,
 				37CEC8281214B672001F5DB3 /* WebPageController.xib */,
-				37CEC82B1214B672001F5DB3 /* WelcomePage.xib */,
 			);
 			name = Xibs;
 			path = ..;
@@ -1440,7 +1422,6 @@
 				37CEC8231214B672001F5DB3 /* SettingsController.xib in Resources */,
 				37CEC8261214B672001F5DB3 /* TabBrowserController.xib in Resources */,
 				37CEC8291214B672001F5DB3 /* WebPageController.xib in Resources */,
-				37CEC82C1214B672001F5DB3 /* WelcomePage.xib in Resources */,
 				F801888F127115AA00215F00 /* Settings.bundle in Resources */,
 				F8018D4C127234DE00215F00 /* Action.png in Resources */,
 				F8018D4D127234DE00215F00 /* backward.png in Resources */,
@@ -1483,6 +1464,7 @@
 				F8018D7E127234DE00215F00 /* short_header.png in Resources */,
 				F8018D7F127234DE00215F00 /* SpinnerBackground.png in Resources */,
 				F8018D80127234DE00215F00 /* SpinnerBackground@2x.png in Resources */,
+				F78E38DA18AA6DB400BBD2E5 /* WelcomePage.xib in Resources */,
 				F8018D81127234DE00215F00 /* srchSpinBG.png in Resources */,
 				F8018D82127234DE00215F00 /* tab.png in Resources */,
 				F8018D83127234DE00215F00 /* tab@2x.png in Resources */,
@@ -1822,32 +1804,6 @@
 				F87B816512F741C000389567 /* pt-PT */,
 			);
 			name = WebPageController.xib;
-			sourceTree = "<group>";
-		};
-		37CEC82B1214B672001F5DB3 /* WelcomePage.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				37CEC7EB1214B5D9001F5DB3 /* English */,
-				37CEC8821214C3EF001F5DB3 /* ru */,
-				37CEC8FA12151281001F5DB3 /* it */,
-				E689BCEB1215C81700CE918D /* fr */,
-				E689BD2E1215E80900CE918D /* tr */,
-				E689BD431215EBC800CE918D /* nl */,
-				E689BD561215EE2600CE918D /* pl */,
-				E6E5838D1219ECAE00A06C45 /* ko */,
-				E6E583B11219F15400A06C45 /* cs */,
-				E6E583BD1219F26E00A06C45 /* ja */,
-				E691FF04121B2CC100C82F9F /* ca */,
-				E691FF10121B2D8600C82F9F /* de */,
-				E691FF1C121B2E7800C82F9F /* es */,
-				E691FFB7121B551900C82F9F /* pt */,
-				E691FFB8121B552100C82F9F /* zh-Hant */,
-				E6C6EBC2121C692A009A36DD /* zh-Hans */,
-				F8CD9D3E12A575A000CB1A2B /* th */,
-				F8CD9D4812A5760F00CB1A2B /* id */,
-				F87B816612F741C500389567 /* pt-PT */,
-			);
-			name = WelcomePage.xib;
 			sourceTree = "<group>";
 		};
 		E691FF68121B4F8C00C82F9F /* Localizable.strings */ = {

@@ -43,13 +43,11 @@
 @interface WelcomePage : UIViewController <EasySetupViewControllerDelegate,ManualSetupViewControllerDelegate> {
   @private
 	UIButton* _setupButton;
-	UIButton* _helpButton;
 }
 
 @property (nonatomic,assign) IBOutlet UIButton* setupButton;
-@property (nonatomic,assign) IBOutlet UIButton* helpButton;
+@property (retain, nonatomic) IBOutlet UILabel *titleLabel;
 
 - (IBAction) presentEasySetupViewController;
-- (IBAction) presentAccountHelpViewController;
 
 @end
