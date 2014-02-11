@@ -59,6 +59,7 @@
 		E68F3FFE11A5F7A80094450B /* WelcomePage.m in Sources */ = {isa = PBXBuildFile; fileRef = E68F3FFC11A5F7A80094450B /* WelcomePage.m */; };
 		E691FF69121B4F8C00C82F9F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E691FF68121B4F8C00C82F9F /* Localizable.strings */; };
 		E691FF97121B53B800C82F9F /* AboutScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF96121B53B800C82F9F /* AboutScreen.xib */; };
+		F7680F7418AA7CF000F9F06E /* EasySetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7680F7318AA7CF000F9F06E /* EasySetupViewController.xib */; };
 		F788DD2B18AA50A00045318F /* UIColor+appColors.m in Sources */ = {isa = PBXBuildFile; fileRef = F788DD2A18AA50A00045318F /* UIColor+appColors.m */; };
 		F78E38DA18AA6DB400BBD2E5 /* WelcomePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78E38D918AA6DB400BBD2E5 /* WelcomePage.xib */; };
 		F801888F127115AA00215F00 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F801888E127115AA00215F00 /* Settings.bundle */; };
@@ -176,7 +177,6 @@
 		F8BDA42012EA728B008A1164 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = F892B7A11284412A00F876B3 /* NSData+AES.m */; };
 		F8C2821E129353EE00825880 /* NSString+WeaveKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C2821D129353EE00825880 /* NSString+WeaveKeys.m */; };
 		F8CD9D1D12A5705100CB1A2B /* ManualSetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8CD9D0A12A5705100CB1A2B /* ManualSetupViewController.xib */; };
-		F8CD9D3112A5706B00CB1A2B /* EasySetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8CD9D1E12A5706B00CB1A2B /* EasySetupViewController.xib */; };
 		F8EBC64B15D1FC8A0046E211 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F857244512AEE15E00A192F4 /* CFNetwork.framework */; };
 		F8EBC64C15D1FCB10046E211 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F857244912AEE16800A192F4 /* SystemConfiguration.framework */; };
 		F8EBC64D15D1FCBF0046E211 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F857245412AEE1A000A192F4 /* libz.dylib */; };
@@ -432,6 +432,7 @@
 		E6E583BA1219F25800A06C45 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/SettingsController.xib; sourceTree = "<group>"; };
 		E6E583BB1219F25F00A06C45 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/TabBrowserController.xib; sourceTree = "<group>"; };
 		E6E583BC1219F26600A06C45 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/WebPageController.xib; sourceTree = "<group>"; };
+		F7680F7318AA7CF000F9F06E /* EasySetupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EasySetupViewController.xib; path = Xibs/EasySetupViewController.xib; sourceTree = "<group>"; };
 		F788DD2918AA50A00045318F /* UIColor+appColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+appColors.h"; sourceTree = "<group>"; };
 		F788DD2A18AA50A00045318F /* UIColor+appColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+appColors.m"; sourceTree = "<group>"; };
 		F78E38D918AA6DB400BBD2E5 /* WelcomePage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WelcomePage.xib; path = Xibs/WelcomePage.xib; sourceTree = "<group>"; };
@@ -664,24 +665,6 @@
 		F8CD9D1A12A5705100CB1A2B /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/ManualSetupViewController.xib; sourceTree = SOURCE_ROOT; };
 		F8CD9D1B12A5705100CB1A2B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/ManualSetupViewController.xib"; sourceTree = SOURCE_ROOT; };
 		F8CD9D1C12A5705100CB1A2B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/ManualSetupViewController.xib"; sourceTree = SOURCE_ROOT; };
-		F8CD9D1F12A5706B00CB1A2B /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/EasySetupViewController.xib; sourceTree = SOURCE_ROOT; };
-		F8CD9D2012A5706B00CB1A2B /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/EasySetupViewController.xib; sourceTree = SOURCE_ROOT; };
-		F8CD9D2112A5706B00CB1A2B /* ca */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ca; path = ca.lproj/EasySetupViewController.xib; sourceTree = SOURCE_ROOT; };
-		F8CD9D2212A5706B00CB1A2B /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/EasySetupViewController.xib; sourceTree = SOURCE_ROOT; };
-		F8CD9D2312A5706B00CB1A2B /* th */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = th; path = th.lproj/EasySetupViewController.xib; sourceTree = SOURCE_ROOT; };
-		F8CD9D2412A5706B00CB1A2B /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/EasySetupViewController.xib; sourceTree = SOURCE_ROOT; };
-		F8CD9D2512A5706B00CB1A2B /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/EasySetupViewController.xib; sourceTree = SOURCE_ROOT; };
-		F8CD9D2612A5706B00CB1A2B /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/EasySetupViewController.xib; sourceTree = SOURCE_ROOT; };
-		F8CD9D2712A5706B00CB1A2B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/EasySetupViewController.xib"; sourceTree = SOURCE_ROOT; };
-		F8CD9D2812A5706B00CB1A2B /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/EasySetupViewController.xib; sourceTree = SOURCE_ROOT; };
-		F8CD9D2912A5706B00CB1A2B /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/EasySetupViewController.xib; sourceTree = SOURCE_ROOT; };
-		F8CD9D2A12A5706B00CB1A2B /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/EasySetupViewController.xib; sourceTree = SOURCE_ROOT; };
-		F8CD9D2B12A5706B00CB1A2B /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/EasySetupViewController.xib; sourceTree = SOURCE_ROOT; };
-		F8CD9D2C12A5706B00CB1A2B /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/EasySetupViewController.xib; sourceTree = SOURCE_ROOT; };
-		F8CD9D2D12A5706B00CB1A2B /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/EasySetupViewController.xib; sourceTree = SOURCE_ROOT; };
-		F8CD9D2E12A5706B00CB1A2B /* id */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = id; path = id.lproj/EasySetupViewController.xib; sourceTree = SOURCE_ROOT; };
-		F8CD9D2F12A5706B00CB1A2B /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/EasySetupViewController.xib; sourceTree = SOURCE_ROOT; };
-		F8CD9D3012A5706B00CB1A2B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/EasySetupViewController.xib"; sourceTree = SOURCE_ROOT; };
 		F8CD9D3212A5752400CB1A2B /* th */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = th; path = th.lproj/AboutScreen.xib; sourceTree = "<group>"; };
 		F8CD9D3512A5756500CB1A2B /* th */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = th; path = th.lproj/AuthDialog.xib; sourceTree = "<group>"; };
 		F8CD9D3712A5757000CB1A2B /* th */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = th; path = th.lproj/LogoutController.xib; sourceTree = "<group>"; };
@@ -950,7 +933,7 @@
 			isa = PBXGroup;
 			children = (
 				F78E38D918AA6DB400BBD2E5 /* WelcomePage.xib */,
-				F8CD9D1E12A5706B00CB1A2B /* EasySetupViewController.xib */,
+				F7680F7318AA7CF000F9F06E /* EasySetupViewController.xib */,
 				F8CD9D0A12A5705100CB1A2B /* ManualSetupViewController.xib */,
 				E691FF96121B53B800C82F9F /* AboutScreen.xib */,
 				37CEC8131214B672001F5DB3 /* AuthDialog.xib */,
@@ -1434,6 +1417,7 @@
 				F8018D78127234DE00215F00 /* reload@2x.png in Resources */,
 				F8018D7A127234DE00215F00 /* settings.png in Resources */,
 				F8018D7B127234DE00215F00 /* settings@2x.png in Resources */,
+				F7680F7418AA7CF000F9F06E /* EasySetupViewController.xib in Resources */,
 				F8018D7E127234DE00215F00 /* short_header.png in Resources */,
 				F8018D7F127234DE00215F00 /* SpinnerBackground.png in Resources */,
 				F8018D80127234DE00215F00 /* SpinnerBackground@2x.png in Resources */,
@@ -1450,7 +1434,6 @@
 				F8018E5E12725C6F00215F00 /* Background.png in Resources */,
 				F8018E5F12725C6F00215F00 /* Background@2x.png in Resources */,
 				F8CD9D1D12A5705100CB1A2B /* ManualSetupViewController.xib in Resources */,
-				F8CD9D3112A5706B00CB1A2B /* EasySetupViewController.xib in Resources */,
 				B8CC90BCFDA08BDE67E43803 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1853,32 +1836,6 @@
 				F8CD9D1C12A5705100CB1A2B /* zh-Hant */,
 			);
 			name = ManualSetupViewController.xib;
-			path = UserInterface;
-			sourceTree = "<group>";
-		};
-		F8CD9D1E12A5706B00CB1A2B /* EasySetupViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F8CD9D1F12A5706B00CB1A2B /* fr */,
-				F8CD9D2012A5706B00CB1A2B /* de */,
-				F8CD9D2112A5706B00CB1A2B /* ca */,
-				F8CD9D2212A5706B00CB1A2B /* ru */,
-				F8CD9D2312A5706B00CB1A2B /* th */,
-				F8CD9D2412A5706B00CB1A2B /* tr */,
-				F8CD9D2512A5706B00CB1A2B /* ko */,
-				F8CD9D2612A5706B00CB1A2B /* ja */,
-				F8CD9D2712A5706B00CB1A2B /* zh-Hant */,
-				F8CD9D2812A5706B00CB1A2B /* it */,
-				F8CD9D2912A5706B00CB1A2B /* nl */,
-				F8CD9D2A12A5706B00CB1A2B /* English */,
-				F8CD9D2B12A5706B00CB1A2B /* es */,
-				F8CD9D2C12A5706B00CB1A2B /* pl */,
-				F8CD9D2D12A5706B00CB1A2B /* pt */,
-				F8CD9D2E12A5706B00CB1A2B /* id */,
-				F8CD9D2F12A5706B00CB1A2B /* cs */,
-				F8CD9D3012A5706B00CB1A2B /* zh-Hans */,
-			);
-			name = EasySetupViewController.xib;
 			path = UserInterface;
 			sourceTree = "<group>";
 		};
