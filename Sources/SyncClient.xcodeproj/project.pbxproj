@@ -53,13 +53,11 @@
 		4AFBD47A108BC68500C4FD32 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFBD479108BC68500C4FD32 /* libsqlite3.0.dylib */; };
 		4AFBD47C108BC68A00C4FD32 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFBD47B108BC68A00C4FD32 /* QuartzCore.framework */; };
 		B8CC90BCFDA08BDE67E43803 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CC9452906C7E3A2C8C2972 /* Default-568h@2x.png */; };
-		E62E983E11A70F4500B56879 /* AccountHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = E62E983C11A70F4500B56879 /* AccountHelp.m */; };
 		E65DB0D911CAF5C500FBF52E /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E65DB0D811CAF5C500FBF52E /* KeychainItemWrapper.m */; };
 		E67B8E5111C83F5E00A31688 /* AuthDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E67B8E4F11C83F5E00A31688 /* AuthDialog.m */; };
 		E680B5881166B7F5007B52C1 /* BookmarkNav.m in Sources */ = {isa = PBXBuildFile; fileRef = E680B5871166B7F5007B52C1 /* BookmarkNav.m */; };
 		E68F3FFE11A5F7A80094450B /* WelcomePage.m in Sources */ = {isa = PBXBuildFile; fileRef = E68F3FFC11A5F7A80094450B /* WelcomePage.m */; };
 		E691FF69121B4F8C00C82F9F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E691FF68121B4F8C00C82F9F /* Localizable.strings */; };
-		E691FF80121B52BF00C82F9F /* AccountHelp.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF7F121B52BF00C82F9F /* AccountHelp.xib */; };
 		E691FF97121B53B800C82F9F /* AboutScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691FF96121B53B800C82F9F /* AboutScreen.xib */; };
 		F788DD2B18AA50A00045318F /* UIColor+appColors.m in Sources */ = {isa = PBXBuildFile; fileRef = F788DD2A18AA50A00045318F /* UIColor+appColors.m */; };
 		F78E38DA18AA6DB400BBD2E5 /* WelcomePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78E38D918AA6DB400BBD2E5 /* WelcomePage.xib */; };
@@ -269,9 +267,8 @@
 		378FC17510D82BEA0010D3C9 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		37A682B110E148BC008005DC /* TapActionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapActionController.h; sourceTree = "<group>"; };
 		37A682B210E148BC008005DC /* TapActionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapActionController.m; sourceTree = "<group>"; };
-		37CEC7C31214A8E3001F5DB3 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		37CEC7C31214A8E3001F5DB3 /* English */ = {isa = PBXFileReference; fileEncoding = 2483028224; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		37CEC7E01214B5D9001F5DB3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/AboutScreen.xib; sourceTree = "<group>"; };
-		37CEC7E11214B5D9001F5DB3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/AccountHelp.xib; sourceTree = "<group>"; };
 		37CEC7E21214B5D9001F5DB3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/AuthDialog.xib; sourceTree = "<group>"; };
 		37CEC7E31214B5D9001F5DB3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/BookmarkPage.xib; sourceTree = "<group>"; };
 		37CEC7E51214B5D9001F5DB3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/LogoutController.xib; sourceTree = "<group>"; };
@@ -306,8 +303,6 @@
 		4AFBD47F108BC68F00C4FD32 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		B8CC9452906C7E3A2C8C2972 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
-		E62E983B11A70F4500B56879 /* AccountHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountHelp.h; sourceTree = "<group>"; };
-		E62E983C11A70F4500B56879 /* AccountHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountHelp.m; sourceTree = "<group>"; };
 		E65DB0D711CAF5C500FBF52E /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		E65DB0D811CAF5C500FBF52E /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		E67B8E4E11C83F5E00A31688 /* AuthDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthDialog.h; sourceTree = "<group>"; };
@@ -379,20 +374,6 @@
 		E691FF76121B501300C82F9F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E691FF77121B504E00C82F9F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E691FF78121B506E00C82F9F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		E691FF82121B52CC00C82F9F /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/AccountHelp.xib; sourceTree = "<group>"; };
-		E691FF83121B52D100C82F9F /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/AccountHelp.xib; sourceTree = "<group>"; };
-		E691FF84121B52DA00C82F9F /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/AccountHelp.xib; sourceTree = "<group>"; };
-		E691FF85121B52DE00C82F9F /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/AccountHelp.xib; sourceTree = "<group>"; };
-		E691FF86121B52E300C82F9F /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/AccountHelp.xib; sourceTree = "<group>"; };
-		E691FF87121B52E700C82F9F /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/AccountHelp.xib; sourceTree = "<group>"; };
-		E691FF88121B52EB00C82F9F /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/AccountHelp.xib; sourceTree = "<group>"; };
-		E691FF89121B52F000C82F9F /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/AccountHelp.xib; sourceTree = "<group>"; };
-		E691FF8A121B52F300C82F9F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/AccountHelp.xib; sourceTree = "<group>"; };
-		E691FF8B121B52F700C82F9F /* ca */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ca; path = ca.lproj/AccountHelp.xib; sourceTree = "<group>"; };
-		E691FF8C121B52FA00C82F9F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/AccountHelp.xib; sourceTree = "<group>"; };
-		E691FF8D121B52FE00C82F9F /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/AccountHelp.xib; sourceTree = "<group>"; };
-		E691FF8E121B530100C82F9F /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/AccountHelp.xib; sourceTree = "<group>"; };
-		E691FF8F121B531300C82F9F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/AccountHelp.xib"; sourceTree = "<group>"; };
 		E691FF99121B53C000C82F9F /* ca */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ca; path = ca.lproj/AboutScreen.xib; sourceTree = "<group>"; };
 		E691FF9A121B53C300C82F9F /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/AboutScreen.xib; sourceTree = "<group>"; };
 		E691FF9B121B53C700C82F9F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/AboutScreen.xib; sourceTree = "<group>"; };
@@ -423,7 +404,6 @@
 		E691FFB6121B550D00C82F9F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/WebPageController.xib"; sourceTree = "<group>"; };
 		E6C6EBB7121C685F009A36DD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E6C6EBB8121C68BD009A36DD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/AboutScreen.xib"; sourceTree = "<group>"; };
-		E6C6EBB9121C68CC009A36DD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/AccountHelp.xib"; sourceTree = "<group>"; };
 		E6C6EBBA121C68D6009A36DD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/AuthDialog.xib"; sourceTree = "<group>"; };
 		E6C6EBBC121C68EB009A36DD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/LogoutController.xib"; sourceTree = "<group>"; };
 		E6C6EBBD121C68F4009A36DD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/MainWindow.xib"; sourceTree = "<group>"; };
@@ -628,7 +608,6 @@
 		F85EEC181281B1CC00948A57 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		F87B815B12F7415C00389567 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F87B815C12F7417400389567 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/AboutScreen.xib"; sourceTree = "<group>"; };
-		F87B815D12F7417D00389567 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/AccountHelp.xib"; sourceTree = "<group>"; };
 		F87B815F12F7419200389567 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/AuthDialog.xib"; sourceTree = "<group>"; };
 		F87B816012F741A300389567 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/LogoutController.xib"; sourceTree = "<group>"; };
 		F87B816112F741A900389567 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/MainWindow.xib"; sourceTree = "<group>"; };
@@ -704,7 +683,6 @@
 		F8CD9D2F12A5706B00CB1A2B /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/EasySetupViewController.xib; sourceTree = SOURCE_ROOT; };
 		F8CD9D3012A5706B00CB1A2B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/EasySetupViewController.xib"; sourceTree = SOURCE_ROOT; };
 		F8CD9D3212A5752400CB1A2B /* th */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = th; path = th.lproj/AboutScreen.xib; sourceTree = "<group>"; };
-		F8CD9D3412A5755A00CB1A2B /* th */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = th; path = th.lproj/AccountHelp.xib; sourceTree = "<group>"; };
 		F8CD9D3512A5756500CB1A2B /* th */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = th; path = th.lproj/AuthDialog.xib; sourceTree = "<group>"; };
 		F8CD9D3712A5757000CB1A2B /* th */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = th; path = th.lproj/LogoutController.xib; sourceTree = "<group>"; };
 		F8CD9D3912A5758500CB1A2B /* th */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = th; path = th.lproj/MainWindow.xib; sourceTree = "<group>"; };
@@ -713,7 +691,6 @@
 		F8CD9D3C12A5759600CB1A2B /* th */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = th; path = th.lproj/TabBrowserController.xib; sourceTree = "<group>"; };
 		F8CD9D3D12A5759B00CB1A2B /* th */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = th; path = th.lproj/WebPageController.xib; sourceTree = "<group>"; };
 		F8CD9D3F12A575D000CB1A2B /* id */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = id; path = id.lproj/AboutScreen.xib; sourceTree = "<group>"; };
-		F8CD9D4012A575D600CB1A2B /* id */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = id; path = id.lproj/AccountHelp.xib; sourceTree = "<group>"; };
 		F8CD9D4112A575DB00CB1A2B /* id */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = id; path = id.lproj/AuthDialog.xib; sourceTree = "<group>"; };
 		F8CD9D4212A575F100CB1A2B /* id */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = id; path = id.lproj/LogoutController.xib; sourceTree = "<group>"; };
 		F8CD9D4312A575F600CB1A2B /* id */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = id; path = id.lproj/MainWindow.xib; sourceTree = "<group>"; };
@@ -867,8 +844,6 @@
 				37CEC7DB1214B563001F5DB3 /* Xibs */,
 				E68F3FFB11A5F7A80094450B /* WelcomePage.h */,
 				E68F3FFC11A5F7A80094450B /* WelcomePage.m */,
-				E62E983B11A70F4500B56879 /* AccountHelp.h */,
-				E62E983C11A70F4500B56879 /* AccountHelp.m */,
 				37ED0D371167188700E04CAE /* BookmarkPage.h */,
 				37ED0D381167188700E04CAE /* BookmarkPage.m */,
 				E680B5861166B7F5007B52C1 /* BookmarkNav.h */,
@@ -978,7 +953,6 @@
 				F8CD9D1E12A5706B00CB1A2B /* EasySetupViewController.xib */,
 				F8CD9D0A12A5705100CB1A2B /* ManualSetupViewController.xib */,
 				E691FF96121B53B800C82F9F /* AboutScreen.xib */,
-				E691FF7F121B52BF00C82F9F /* AccountHelp.xib */,
 				37CEC8131214B672001F5DB3 /* AuthDialog.xib */,
 				37CEC8161214B672001F5DB3 /* BookmarkPage.xib */,
 				37CEC81C1214B672001F5DB3 /* LogoutController.xib */,
@@ -1413,7 +1387,6 @@
 				37868DA511DAC54800A8E3D0 /* README.txt in Resources */,
 				E691FF69121B4F8C00C82F9F /* Localizable.strings in Resources */,
 				E691FF97121B53B800C82F9F /* AboutScreen.xib in Resources */,
-				E691FF80121B52BF00C82F9F /* AccountHelp.xib in Resources */,
 				37CEC8141214B672001F5DB3 /* AuthDialog.xib in Resources */,
 				37CEC8171214B672001F5DB3 /* BookmarkPage.xib in Resources */,
 				37CEC81D1214B672001F5DB3 /* LogoutController.xib in Resources */,
@@ -1535,7 +1508,6 @@
 				E680B5881166B7F5007B52C1 /* BookmarkNav.m in Sources */,
 				37ED0D3A1167188700E04CAE /* BookmarkPage.m in Sources */,
 				E68F3FFE11A5F7A80094450B /* WelcomePage.m in Sources */,
-				E62E983E11A70F4500B56879 /* AccountHelp.m in Sources */,
 				E67B8E5111C83F5E00A31688 /* AuthDialog.m in Sources */,
 				E65DB0D911CAF5C500FBF52E /* KeychainItemWrapper.m in Sources */,
 				37E8731711D3D5FE0004292A /* AboutScreen.m in Sources */,
@@ -1830,32 +1802,6 @@
 				F87B815B12F7415C00389567 /* pt-PT */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		E691FF7F121B52BF00C82F9F /* AccountHelp.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				37CEC7E11214B5D9001F5DB3 /* English */,
-				E691FF82121B52CC00C82F9F /* ru */,
-				E691FF83121B52D100C82F9F /* it */,
-				E691FF84121B52DA00C82F9F /* fr */,
-				E691FF85121B52DE00C82F9F /* tr */,
-				E691FF86121B52E300C82F9F /* nl */,
-				E691FF87121B52E700C82F9F /* pl */,
-				E691FF88121B52EB00C82F9F /* ko */,
-				E691FF89121B52F000C82F9F /* cs */,
-				E691FF8A121B52F300C82F9F /* ja */,
-				E691FF8B121B52F700C82F9F /* ca */,
-				E691FF8C121B52FA00C82F9F /* de */,
-				E691FF8D121B52FE00C82F9F /* es */,
-				E691FF8E121B530100C82F9F /* pt */,
-				E691FF8F121B531300C82F9F /* zh-Hant */,
-				E6C6EBB9121C68CC009A36DD /* zh-Hans */,
-				F8CD9D3412A5755A00CB1A2B /* th */,
-				F8CD9D4012A575D600CB1A2B /* id */,
-				F87B815D12F7417D00389567 /* pt-PT */,
-			);
-			name = AccountHelp.xib;
 			sourceTree = "<group>";
 		};
 		E691FF96121B53B800C82F9F /* AboutScreen.xib */ = {

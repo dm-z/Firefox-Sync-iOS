@@ -36,7 +36,6 @@
  ***** END LICENSE BLOCK *****/
 
 #import "WelcomePage.h"
-#import "AccountHelp.h"
 #import "WeaveAppDelegate.h"
 #import "JPAKEReporter.h"
 #import "UIColor+appColors.h"

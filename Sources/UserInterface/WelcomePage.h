@@ -38,7 +38,6 @@
 #import <UIKit/UIKit.h>
 #import "EasySetupViewController.h"
 #import "ManualSetupViewController.h"
-#import "AccountHelp.h"
 
 @interface WelcomePage : UIViewController <EasySetupViewControllerDelegate,ManualSetupViewControllerDelegate> {
   @private
