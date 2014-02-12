@@ -85,6 +85,7 @@
 @property (nonatomic,assign) IBOutlet UILabel* passcodeLabel;
 @property (nonatomic,assign) IBOutlet UIButton* manualSetupButton;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
+@property (retain, nonatomic) IBOutlet UILabel *helpLabel;
 
 @property (nonatomic,retain) NSURL* server;
 @property (nonatomic,assign) id<EasySetupViewControllerDelegate> delegate;

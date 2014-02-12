@@ -9,7 +9,9 @@
             <connections>
                 <outlet property="activityIndicator" destination="19" id="21"/>
                 <outlet property="cancelButton" destination="14" id="J3Q-Yb-oWI"/>
+                <outlet property="helpLabel" destination="10" id="uXc-OO-9Dh"/>
                 <outlet property="manualSetupButton" destination="22" id="32"/>
+                <outlet property="navigationBar" destination="11" id="bFj-ta-fgO"/>
                 <outlet property="passcodeLabel" destination="27" id="31"/>
                 <outlet property="passwordLabel1" destination="7" id="15"/>
                 <outlet property="passwordLabel2" destination="8" id="16"/>

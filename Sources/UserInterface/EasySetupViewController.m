@@ -145,6 +145,7 @@
 
 - (void) viewDidLoad
 {
+    [self setupLocaleStrings];
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
     {
         self.cancelButton.tintColor = [UIColor navigationItemColor];
@@ -206,6 +207,7 @@
 	[_client release];
 	[_server release];
 	[_reporter release];
+    [_helpLabel release];
 	[super dealloc];
 }
 
@@ -246,6 +248,14 @@
 }
 
 #pragma mark - private
+
+- (void)setupLocaleStrings
+{
+    self.navigationBar.topItem.title = NSLocalizedString(@"Connect to Sync", nil);
+    [self.manualSetupButton setTitle:NSLocalizedString(@"I am not near my Computer", nil)
+                            forState:UIControlStateNormal];
+    self.helpLabel.text = NSLocalizedString(@"From a Firefox Sync-connected computer, go to Sync options and select \"Add a device.\"", nil);
+}
 
 - (NSString*) formatCode: (NSString*) code
 {
@@ -315,5 +325,9 @@
 	[_delegate easySetupViewControllerDidCancel: self];
 }
 
+- (void)viewDidUnload {
+[self setHelpLabel:nil];
+[super viewDidUnload];
+}
 @end
 	
