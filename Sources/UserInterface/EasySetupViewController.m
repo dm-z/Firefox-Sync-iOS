@@ -141,7 +141,7 @@
 	[_delegate easySetupViewControllerDidLogin: self];
 }
 
-#pragma mark -
+#pragma mark - view lifecycle
 
 - (void) viewDidLoad
 {
@@ -199,7 +199,7 @@
 	[[UIApplication sharedApplication] setIdleTimerDisabled: NO];
 }
 
-#pragma mark -
+#pragma mark - lifecycle
 
 - (void) dealloc
 {
@@ -209,7 +209,7 @@
 	[super dealloc];
 }
 
-#pragma mark -
+#pragma mark - actions
 
 - (IBAction) cancel
 {
@@ -245,7 +245,7 @@
 	}
 }
 
-#pragma mark -
+#pragma mark - private
 
 - (NSString*) formatCode: (NSString*) code
 {
