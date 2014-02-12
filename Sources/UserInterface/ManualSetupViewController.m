@@ -431,7 +431,6 @@
 		label.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
 		label.backgroundColor = [UIColor clearColor];
 		label.textAlignment = UITextAlignmentCenter;
-		//label.textColor = [UIColor whiteColor];
 		label.font = [UIFont boldSystemFontOfSize: 13];
 		label.text = NSLocalizedString(@"Caution: use at own risk", @"Caution: use at own risk");
 	}
@@ -452,7 +451,6 @@
 		label.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
 		label.backgroundColor = [UIColor clearColor];
 		label.textAlignment = UITextAlignmentCenter;
-		//label.textColor = [UIColor whiteColor];
 		label.font = [UIFont boldSystemFontOfSize: 13];
 		label.text = NSLocalizedString(@"Enter your Sync account information", @"Enter your Sync account information");
 	}
