@@ -11,5 +11,5 @@
 @interface UIColor (appColors)
 
 + (UIColor *)buttonsColor;
-
++ (UIColor *)navigationItemColor;
 @end

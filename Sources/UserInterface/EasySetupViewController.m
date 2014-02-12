@@ -41,6 +41,9 @@
 #import "EasySetupViewController.h"
 #import "WeaveAppDelegate.h"
 #import "Stockboy.h"
+#import "UIColor+appColors.h"
+
+
 
 @implementation EasySetupViewController
 
@@ -142,6 +145,11 @@
 
 - (void) viewDidLoad
 {
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
+    {
+        self.cancelButton.tintColor = [UIColor navigationItemColor];
+    }
+
 	_passwordView1.layer.cornerRadius = 7;
 	_passwordView2.layer.cornerRadius = 7;
 	_passwordView3.layer.cornerRadius = 7;
