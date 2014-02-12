@@ -791,7 +791,7 @@ static Store* _gStore = nil;
 
 		@catch (NSException *exception) 
 		{
-			NSLog(@"Malformed bookmark data: %@",[exception name], [exception reason]);
+			NSLog(@"Malformed bookmark data: %@ \n details: %@",[exception name], [exception reason]);
 		}
 
 		@finally 
@@ -917,7 +917,7 @@ static Store* _gStore = nil;
 
 		@catch (NSException *exception) 
 		{
-			NSLog(@"Malformed history item data: %@",[exception name], [exception reason]);
+			NSLog(@"Malformed history item data: %@\n details: %@",[exception name], [exception reason]);
 		}
 
 		@finally 
@@ -1008,7 +1008,7 @@ static Store* _gStore = nil;
 
 			@catch (NSException *exception) 
 			{
-				NSLog(@"Malformed tab data: %@",[exception name], [exception reason]);
+				NSLog(@"Malformed tab data: %@\n details: %@",[exception name], [exception reason]);
 			}
 
 			@finally 

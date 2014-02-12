@@ -37,7 +37,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "Store.h";
+#import "Store.h"//;
 #import "CryptoUtils.h"
 #import "Reachability.h"
 

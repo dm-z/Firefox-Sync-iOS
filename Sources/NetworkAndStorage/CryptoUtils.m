@@ -961,7 +961,7 @@ static CryptoUtils* _cryptoManager = nil;
 	if (err != noErr) 
   {
     NSString* name = [[NSString alloc] initWithData:keyNameUTF8 encoding:NSUTF8StringEncoding];
-		NSLog(@"failed to add key \"%@\"   error: %d", name, err);
+		NSLog(@"failed to add key \"%@\"   error: %d", name, (int)err);
     [name release];
 	}
 	
@@ -1008,7 +1008,7 @@ static CryptoUtils* _cryptoManager = nil;
     NSLog(@"unable to delete private key, already deleted");
   }
   else if (err) {
-    NSLog(@"unable to delete private key, error: %d", err);
+    NSLog(@"unable to delete private key, error: %d", (int)err);
   }
   
   KeychainItemWrapper* creds = [[KeychainItemWrapper alloc] initWithIdentifier:CREDENTIALS_NAME accessGroup:nil];
@@ -1208,7 +1208,7 @@ static CryptoUtils* _cryptoManager = nil;
 	
 	if (err != noErr) 
   {
-		NSLog(@"Failed to decrypt symmetric key, error: %d", err);
+		NSLog(@"Failed to decrypt symmetric key, error: %d", (int)err);
     if (keyBuffer) free(keyBuffer);
     return nil;
 	}

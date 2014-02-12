@@ -543,7 +543,7 @@ static NSMutableArray* gFreshSearchHits = nil;
   [bookmarks release];
   
   
-  NSDictionary* tabs = [[[Store getStore] getTabs] retain];
+  NSArray* tabs = [[[Store getStore] getTabs] retain];
   for (NSDictionary* client in tabs)
   {
     [self searchWeaveObjects:[client objectForKey:@"tabs"] 
