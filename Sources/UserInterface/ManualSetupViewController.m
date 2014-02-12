@@ -39,6 +39,9 @@
 #import "ManualSetupViewController.h"
 #import "WeaveAppDelegate.h"
 #import "Stockboy.h"
+#import "UIColor+appColors.h"
+
+
 
 @implementation ManualSetupViewController
 
@@ -220,8 +223,13 @@
 
 - (void) viewDidLoad
 {
-	[super viewDidLoad];
-	
+    [super viewDidLoad];
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
+    {
+        self.cancelButton.tintColor = [UIColor navigationItemColor];
+    }
+    [self setupLocaleStrings];
+
 	_tableView.allowsSelection = NO;
 	//_tableView.backgroundView = [[[UIImageView alloc] initWithImage: [UIImage imageNamed: @"Background.png"]] autorelease];
 	_tableView.backgroundColor = [UIColor clearColor];
@@ -368,6 +376,11 @@
 
 #pragma mark -
 
+- (void)setupLocaleStrings
+{
+    self.navigationBar.topItem.title = NSLocalizedString(@"Connect to Sync", nil);
+}
+
 - (void) customServerSwitchChangedValue: (UISwitch*) sender
 {
 	if (sender.on) {
@@ -418,7 +431,7 @@
 		label.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
 		label.backgroundColor = [UIColor clearColor];
 		label.textAlignment = UITextAlignmentCenter;
-		label.textColor = [UIColor whiteColor];
+		//label.textColor = [UIColor whiteColor];
 		label.font = [UIFont boldSystemFontOfSize: 13];
 		label.text = NSLocalizedString(@"Caution: use at own risk", @"Caution: use at own risk");
 	}
@@ -439,7 +452,7 @@
 		label.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
 		label.backgroundColor = [UIColor clearColor];
 		label.textAlignment = UITextAlignmentCenter;
-		label.textColor = [UIColor whiteColor];
+		//label.textColor = [UIColor whiteColor];
 		label.font = [UIFont boldSystemFontOfSize: 13];
 		label.text = NSLocalizedString(@"Enter your Sync account information", @"Enter your Sync account information");
 	}
@@ -567,4 +580,8 @@
     return cell;
 }
 
+- (void)viewDidUnload {
+    [self setNavigationBar:nil];
+    [super viewDidUnload];
+}
 @end

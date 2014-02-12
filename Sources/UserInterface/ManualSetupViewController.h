@@ -70,6 +70,7 @@
 @property (nonatomic, assign) IBOutlet UIView *spinnerView;
 @property (nonatomic, assign) IBOutlet UIActivityIndicatorView* spinner;
 @property (nonatomic, assign) IBOutlet UITableView* tableView;
+@property (retain, nonatomic) IBOutlet UINavigationBar *navigationBar;
 
 @property (nonatomic,assign) id<ManualSetupViewControllerDelegate> delegate;
 

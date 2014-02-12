@@ -145,7 +145,6 @@
 
 - (void) viewDidLoad
 {
-    [self setupLocaleStrings];
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
     {
         self.cancelButton.tintColor = [UIColor navigationItemColor];
@@ -188,6 +187,8 @@
 
 	_client = [[JPAKEClient alloc] initWithServer: _server delegate: self reporter: _reporter];
 	[_client start];
+
+    [self setupLocaleStrings];
 }
 
 - (void) viewDidAppear:(BOOL)animated
