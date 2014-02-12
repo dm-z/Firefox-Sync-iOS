@@ -43,7 +43,7 @@
                     </textAttributes>
                     <items>
                         <navigationItem title="Connect to Sync" id="12">
-                            <barButtonItem key="rightBarButtonItem" style="plain" systemItem="cancel" id="14">
+                            <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="14">
                                 <connections>
                                     <action selector="cancel" destination="-1" id="18"/>
                                 </connections>
