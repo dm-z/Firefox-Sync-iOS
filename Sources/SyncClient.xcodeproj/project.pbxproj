@@ -62,6 +62,8 @@
 		F7680F7418AA7CF000F9F06E /* EasySetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7680F7318AA7CF000F9F06E /* EasySetupViewController.xib */; };
 		F788DD2B18AA50A00045318F /* UIColor+appColors.m in Sources */ = {isa = PBXBuildFile; fileRef = F788DD2A18AA50A00045318F /* UIColor+appColors.m */; };
 		F78E38DA18AA6DB400BBD2E5 /* WelcomePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78E38D918AA6DB400BBD2E5 /* WelcomePage.xib */; };
+		F7BDB8F218AB6D4200377470 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BDB8F018AB6D4200377470 /* Default.png */; };
+		F7BDB8F318AB6D4200377470 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BDB8F118AB6D4200377470 /* Default@2x.png */; };
 		F801888F127115AA00215F00 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F801888E127115AA00215F00 /* Settings.bundle */; };
 		F8018D4C127234DE00215F00 /* Action.png in Resources */ = {isa = PBXBuildFile; fileRef = F8018D0E127234DE00215F00 /* Action.png */; };
 		F8018D4D127234DE00215F00 /* backward.png in Resources */ = {isa = PBXBuildFile; fileRef = F8018D0F127234DE00215F00 /* backward.png */; };
@@ -436,6 +438,8 @@
 		F788DD2918AA50A00045318F /* UIColor+appColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+appColors.h"; sourceTree = "<group>"; };
 		F788DD2A18AA50A00045318F /* UIColor+appColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+appColors.m"; sourceTree = "<group>"; };
 		F78E38D918AA6DB400BBD2E5 /* WelcomePage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WelcomePage.xib; path = Xibs/WelcomePage.xib; sourceTree = "<group>"; };
+		F7BDB8F018AB6D4200377470 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		F7BDB8F118AB6D4200377470 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		F801888E127115AA00215F00 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		F8018D0E127234DE00215F00 /* Action.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Action.png; sourceTree = "<group>"; };
 		F8018D0F127234DE00215F00 /* backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backward.png; sourceTree = "<group>"; };
@@ -1005,6 +1009,8 @@
 				F8018E5C12725C6F00215F00 /* Background.png */,
 				F8018E5D12725C6F00215F00 /* Background@2x.png */,
 				B8CC9452906C7E3A2C8C2972 /* Default-568h@2x.png */,
+				F7BDB8F018AB6D4200377470 /* Default.png */,
+				F7BDB8F118AB6D4200377470 /* Default@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1371,6 +1377,7 @@
 				E691FF69121B4F8C00C82F9F /* Localizable.strings in Resources */,
 				E691FF97121B53B800C82F9F /* AboutScreen.xib in Resources */,
 				37CEC8141214B672001F5DB3 /* AuthDialog.xib in Resources */,
+				F7BDB8F318AB6D4200377470 /* Default@2x.png in Resources */,
 				37CEC8171214B672001F5DB3 /* BookmarkPage.xib in Resources */,
 				37CEC81D1214B672001F5DB3 /* LogoutController.xib in Resources */,
 				37CEC80B1214B65F001F5DB3 /* MainWindow.xib in Resources */,
@@ -1383,6 +1390,7 @@
 				F8018D4D127234DE00215F00 /* backward.png in Resources */,
 				F8018D4E127234DE00215F00 /* backward@2x.png in Resources */,
 				F8018D51127234DE00215F00 /* blue-bar.png in Resources */,
+				F7BDB8F218AB6D4200377470 /* Default.png in Resources */,
 				F8018D52127234DE00215F00 /* blue-bar@2x.png in Resources */,
 				F8018D53127234DE00215F00 /* bookmark.png in Resources */,
 				F8018D54127234DE00215F00 /* bookmark@2x.png in Resources */,

@@ -74,7 +74,7 @@
   // add the new image to fade out
   UIImageView* defaultFadeImage = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]] autorelease];
   [window addSubview:defaultFadeImage];
-  
+
   // and start the default fadeout
   [UIView beginAnimations:@"InitialFadeIn" context:nil];
   [UIView setAnimationDelegate:defaultFadeImage];
@@ -115,15 +115,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	// This sleep is totally here to just show the new awesome Default.png. But only once after
-	// the app is installed.
-	
-	if ([[NSUserDefaults standardUserDefaults] objectForKey: @"FFH_VERS"] == nil) {
-		sleep(3);
-	}
+    //Removing black box at the bottom of 4 inch screen
+    self.window.frame = [UIScreen mainScreen].bounds;
 
 	// Setup the defaults
-  
 	NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
 	if (userDefaults != nil)
 	{
@@ -180,11 +175,12 @@
   [webController view];
   
 	// Show window
-  [window addSubview:tabBarController.view];
+    self.window.rootViewController = tabBarController;
+    //[window addSubview:tabBarController.view];
   
 	//I need to do this to at least get my hierarchy of viewControllers to get the viewWillAppear method.
 	// unexpectedly, this seems to wire everything up, and all my subviews get the viewDidAppear methods as well.
-	[tabBarController viewWillAppear:YES];    
+	[tabBarController viewWillAppear:YES];
 	
   [window makeKeyAndVisible];
 
@@ -208,7 +204,7 @@
     [Stockboy restock];
   }
   
-  [self fadeToMainPage];
+  //[self fadeToMainPage];
   
   return NO;
 }
@@ -388,9 +384,9 @@
 - (void) rotateFullscreenView: (UIView*)theView toOrientation: (UIInterfaceOrientation)orientation
 {
   CGFloat angle = deg0;
-  CGPoint newCenter; 
+  CGPoint newCenter;
   CGRect newBounds;
-  
+
   switch (orientation)
   {
     case UIInterfaceOrientationPortrait:
@@ -414,10 +410,10 @@
       newCenter = CGPointMake((300/2), 480/2);
       break;
   }
-  
+
   CGAffineTransform transform = CGAffineTransformMakeRotation(angle);
   theView.transform = transform;
-  theView.bounds = newBounds;  
+  theView.bounds = newBounds;
   theView.center = newCenter;
 }
 
