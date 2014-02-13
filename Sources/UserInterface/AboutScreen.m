@@ -12,28 +12,32 @@
 #import "TapActionController.h"
 
 
+
 @implementation AboutScreen
 
-- (IBAction) done
+- (IBAction)done
 {
-  WeaveAppDelegate* appDelegate = (WeaveAppDelegate *)[[UIApplication sharedApplication] delegate];
-  [[appDelegate settings] dismissModalViewControllerAnimated:YES];
+    WeaveAppDelegate *appDelegate = (WeaveAppDelegate *) [[UIApplication sharedApplication] delegate];
+    [[appDelegate settings] dismissModalViewControllerAnimated:YES];
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.textLabel.text = NSLocalizedString(@"Mozilla, Firefox, and the Mozilla, Firefox, and SyncClient logos are trademarks of the Mozilla Foundation.", nil);
     [self.doneButton setTitle:NSLocalizedString(@"Done", nil) forState:UIControlStateNormal];
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
     [self setTextLabel:nil];
     [self setDoneButton:nil];
     [super viewDidUnload];
 }
 
 
-- (void)dealloc {
+- (void)dealloc
+{
     [_textLabel release];
     [_doneButton release];
     [super dealloc];

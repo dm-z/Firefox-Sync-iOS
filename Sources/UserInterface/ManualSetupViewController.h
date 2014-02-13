@@ -41,41 +41,47 @@
 
 @class ManualSetupViewController;
 
+
+
 @protocol ManualSetupViewControllerDelegate
-- (void) manualSetupViewControllerDidLogin: (ManualSetupViewController*) vc;
-- (void) manualSetupViewControllerDidCancel: (ManualSetupViewController*) vc;
+
+- (void)manualSetupViewControllerDidLogin:(ManualSetupViewController *)vc;
+- (void)manualSetupViewControllerDidCancel:(ManualSetupViewController *)vc;
 @end
 
-@interface ManualSetupViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate> {
-  @private
-	UIBarButtonItem* _cancelButton;
-	UIBarButtonItem* _loginButton;
-	UIView* _spinnerView;
-	UIActivityIndicatorView* _spinner;
-	UITableView* _tableView;
-  @private
-	id<ManualSetupViewControllerDelegate> _delegate;
-  @private
-	CryptoUtils* _newCryptoManager;
-  @private
-	NSString* _username;
-	NSString* _password;
-	NSString* _secret;
-	BOOL _customServerEnabled;
-	NSString* _customServerURL;
+
+
+@interface ManualSetupViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+{
+@private
+    UIBarButtonItem *_cancelButton;
+    UIBarButtonItem *_loginButton;
+    UIView *_spinnerView;
+    UIActivityIndicatorView *_spinner;
+    UITableView *_tableView;
+@private
+    id <ManualSetupViewControllerDelegate> _delegate;
+@private
+    CryptoUtils *_newCryptoManager;
+@private
+    NSString *_username;
+    NSString *_password;
+    NSString *_secret;
+    BOOL _customServerEnabled;
+    NSString *_customServerURL;
 }
 
-@property (nonatomic,assign) IBOutlet UIBarButtonItem* loginButton;
-@property (nonatomic,assign) IBOutlet UIBarButtonItem* cancelButton;
-@property (nonatomic, assign) IBOutlet UIView *spinnerView;
-@property (nonatomic, assign) IBOutlet UIActivityIndicatorView* spinner;
-@property (nonatomic, assign) IBOutlet UITableView* tableView;
-@property (retain, nonatomic) IBOutlet UINavigationBar *navigationBar;
+@property(nonatomic, assign) IBOutlet UIBarButtonItem *loginButton;
+@property(nonatomic, assign) IBOutlet UIBarButtonItem *cancelButton;
+@property(nonatomic, assign) IBOutlet UIView *spinnerView;
+@property(nonatomic, assign) IBOutlet UIActivityIndicatorView *spinner;
+@property(nonatomic, assign) IBOutlet UITableView *tableView;
+@property(retain, nonatomic) IBOutlet UINavigationBar *navigationBar;
 
-@property (nonatomic,assign) id<ManualSetupViewControllerDelegate> delegate;
+@property(nonatomic, assign) id <ManualSetupViewControllerDelegate> delegate;
 
-- (IBAction) cancel;
-- (IBAction) login;
+- (IBAction)cancel;
+- (IBAction)login;
 
 @end
 

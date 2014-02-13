@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
+
 @interface AboutScreen : UIViewController
 
-@property (retain, nonatomic) IBOutlet UILabel *textLabel;
-@property (retain, nonatomic) IBOutlet UIButton *doneButton;
+@property(retain, nonatomic) IBOutlet UILabel *textLabel;
+@property(retain, nonatomic) IBOutlet UIButton *doneButton;
 
-- (IBAction) done;
+- (IBAction)done;
 
 @end

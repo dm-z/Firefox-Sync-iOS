@@ -42,104 +42,114 @@
 #import "WeaveAppDelegate.h"
 #import "WelcomePage.h"
 
+
+
 @implementation LogoutController
 
 @synthesize spinnerView;
 @synthesize spinner;
 
-- (void) startLogoutSpinner
+- (void)startLogoutSpinner
 {
-  [spinner startAnimating];
-  [[self view] addSubview:spinnerView];
+    [spinner startAnimating];
+    [[self view] addSubview:spinnerView];
 }
 
-- (void) stopLogoutSpinner
+- (void)stopLogoutSpinner
 {
-  [spinnerView removeFromSuperview];
-  [spinner stopAnimating];
+    [spinnerView removeFromSuperview];
+    [spinner stopAnimating];
 }
-
 
 
 //this is the code run by the new thread we make to wait on the stockboy
-- (void) waitForStockboy
+- (void)waitForStockboy
 {
-  WeaveAppDelegate* appDelegate = (WeaveAppDelegate *)[[UIApplication sharedApplication] delegate];
+    WeaveAppDelegate *appDelegate = (WeaveAppDelegate *) [[UIApplication sharedApplication] delegate];
 
-  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-  [appDelegate performSelectorOnMainThread:@selector(changeProgressSpinnersMessage:) withObject:@"stopping" waitUntilDone:YES];
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    [appDelegate performSelectorOnMainThread:@selector(changeProgressSpinnersMessage:)
+                                  withObject:@"stopping"
+                               waitUntilDone:YES];
 
-  //wait on the stockboy
-  NSCondition *syncLock = [Stockboy syncLock];
-  [syncLock lock];
-  [Stockboy cancel]; //ask him to stop syncing
-  while ([Stockboy syncInProgress]) [syncLock wait];
-  [syncLock signal];
-  [syncLock unlock];
+    //wait on the stockboy
+    NSCondition *syncLock = [Stockboy syncLock];
+    [syncLock lock];
+    [Stockboy cancel]; //ask him to stop syncing
+    while ([Stockboy syncInProgress]) [syncLock wait];
+    [syncLock signal];
+    [syncLock unlock];
 
-  //stop the spinner
-  [self performSelectorOnMainThread:@selector(stopLogoutSpinner) withObject:nil waitUntilDone:YES];
-  //erase the data
-  [appDelegate performSelectorOnMainThread:@selector(eraseAllUserData) withObject:nil waitUntilDone:YES];
+    //stop the spinner
+    [self performSelectorOnMainThread:@selector(stopLogoutSpinner)
+                           withObject:nil
+                        waitUntilDone:YES];
+    //erase the data
+    [appDelegate performSelectorOnMainThread:@selector(eraseAllUserData)
+                                  withObject:nil
+                               waitUntilDone:YES];
 
-  [self performSelectorOnMainThread:@selector(loginAgain) withObject:nil waitUntilDone:YES];
+    [self performSelectorOnMainThread:@selector(loginAgain) withObject:nil waitUntilDone:YES];
 
-  [pool drain];
+    [pool drain];
 }
 
 
-- (void) loginAgain
+- (void)loginAgain
 {
-	[self dismissModalViewControllerAnimated: NO];
+    [self dismissModalViewControllerAnimated:NO];
 
-	// Move to the first (search) tab, away from the settings tab
-	WeaveAppDelegate* appDelegate = (WeaveAppDelegate *)[[UIApplication sharedApplication] delegate];
-	appDelegate.tabBarController.selectedIndex = 0;
-	
-	// Present the WelcomePage with the TabBarController as it's parent
-	WelcomePage* welcomePage = [[WelcomePage new] autorelease];
-	[appDelegate.tabBarController presentModalViewController: welcomePage animated: NO];
-}  
+    // Move to the first (search) tab, away from the settings tab
+    WeaveAppDelegate *appDelegate = (WeaveAppDelegate *) [[UIApplication sharedApplication] delegate];
+    appDelegate.tabBarController.selectedIndex = 0;
 
-- (IBAction) doNotLogout:(id)sender
-{
-	[self dismissModalViewControllerAnimated: YES];
+    // Present the WelcomePage with the TabBarController as it's parent
+    WelcomePage *welcomePage = [[WelcomePage new] autorelease];
+    [appDelegate.tabBarController presentModalViewController:welcomePage animated:NO];
 }
 
-- (IBAction) logout:(id)sender
+- (IBAction)doNotLogout:(id)sender
 {
-  //start the spinner
-  [self startLogoutSpinner];
-  //fire the background thread to wait on the stockboy.
-  NSThread* loiterer = [[[NSThread alloc] initWithTarget:self selector:@selector(waitForStockboy) object:nil] autorelease];
-  [loiterer start];
-  
-	// Workaround for #602419 - If the wifi is turned off, it acts as if a blank account is signed in
-	//
-	// This is a workaround for the above code. The problem is that when the user logs out and then exits the
-	// app before either the current sync is done and the above waitForStockBoy code has fired, the app will
-	// be in a weird state. (We have to wait because there is no cancellation mechanism in the current
-	// thread-based networking code)
-	//
-	// So what we do as a workaround is mark the user as being logged out. Then when the app starts and it
-	// sees this flag being set, it will simply reset the app. This is not great because it means that even
-	// after the user logs out, his data is still on the device. Ugly but it does the trick for now.
-	
-	[[NSUserDefaults standardUserDefaults] setBool: YES forKey: @"needsFullReset"];
-	[[NSUserDefaults standardUserDefaults] synchronize];
+    [self dismissModalViewControllerAnimated:YES];
 }
 
+- (IBAction)logout:(id)sender
+{
+    //start the spinner
+    [self startLogoutSpinner];
+    //fire the background thread to wait on the stockboy.
+    NSThread *loiterer = [[[NSThread alloc] initWithTarget:self
+                                                  selector:@selector(waitForStockboy)
+                                                    object:nil] autorelease];
+    [loiterer start];
 
+    // Workaround for #602419 - If the wifi is turned off, it acts as if a blank account is signed in
+    //
+    // This is a workaround for the above code. The problem is that when the user logs out and then exits the
+    // app before either the current sync is done and the above waitForStockBoy code has fired, the app will
+    // be in a weird state. (We have to wait because there is no cancellation mechanism in the current
+    // thread-based networking code)
+    //
+    // So what we do as a workaround is mark the user as being logged out. Then when the app starts and it
+    // sees this flag being set, it will simply reset the app. This is not great because it means that even
+    // after the user logs out, his data is still on the device. Ugly but it does the trick for now.
 
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-  spinner = nil;
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"needsFullReset"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 
-- (void)dealloc {
-  [spinnerView release];
-  [super dealloc];
+- (void)viewDidUnload
+{
+    // Release any retained subviews of the main view.
+    spinner = nil;
+}
+
+
+- (void)dealloc
+{
+    [spinnerView release];
+    [super dealloc];
 }
 
 

@@ -38,22 +38,24 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 @interface SearchResultsController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate>
 {
-  @private
-	NSArray* searchHits;  
-	UIActivityIndicatorView*  spinner;	  
-	UIView* spinBG;
-	UIView *searchAndLogoView;
-	NSString* gLastSearchString;
-	UILabel* _statusLabel;
+@private
+    NSArray *searchHits;
+    UIActivityIndicatorView *spinner;
+    UIView *spinBG;
+    UIView *searchAndLogoView;
+    NSString *gLastSearchString;
+    UILabel *_statusLabel;
 }
 
-- (void) refresh;
+- (void)refresh;
 
-@property (nonatomic, retain) IBOutlet UIView* searchAndLogoView;
-@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *spinner;
-@property (nonatomic, retain) IBOutlet UIView* spinBG;
-@property (nonatomic, retain) IBOutlet UILabel* statusLabel;
+@property(nonatomic, retain) IBOutlet UIView *searchAndLogoView;
+@property(nonatomic, retain) IBOutlet UIActivityIndicatorView *spinner;
+@property(nonatomic, retain) IBOutlet UIView *spinBG;
+@property(nonatomic, retain) IBOutlet UILabel *statusLabel;
 
 @end

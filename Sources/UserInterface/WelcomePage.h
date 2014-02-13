@@ -39,14 +39,17 @@
 #import "EasySetupViewController.h"
 #import "ManualSetupViewController.h"
 
-@interface WelcomePage : UIViewController <EasySetupViewControllerDelegate,ManualSetupViewControllerDelegate> {
-  @private
-	UIButton* _setupButton;
+
+
+@interface WelcomePage : UIViewController <EasySetupViewControllerDelegate, ManualSetupViewControllerDelegate>
+{
+@private
+    UIButton *_setupButton;
 }
 
-@property (nonatomic,assign) IBOutlet UIButton* setupButton;
-@property (retain, nonatomic) IBOutlet UILabel *titleLabel;
+@property(nonatomic, assign) IBOutlet UIButton *setupButton;
+@property(retain, nonatomic) IBOutlet UILabel *titleLabel;
 
-- (IBAction) presentEasySetupViewController;
+- (IBAction)presentEasySetupViewController;
 
 @end

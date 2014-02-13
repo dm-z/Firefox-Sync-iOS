@@ -38,15 +38,17 @@
 #import <UIKit/UIKit.h>
 
 
+
 @interface TapActionController : UIViewController <UIActionSheetDelegate>
 {
-  NSString* location;
+    NSString *location;
 }
 
-- (id) initWithLocation:(NSString*)loc;
-- (void) chooseAction;
-- (void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex;
+- (id)initWithLocation:(NSString *)loc;
+- (void)chooseAction;
+- (void) actionSheet:(UIActionSheet *)actionSheet
+clickedButtonAtIndex:(NSInteger)buttonIndex;
 
-+ (void) slideWebBrowserIn;
-+ (void) slideWebBrowserOut;
++ (void)slideWebBrowserIn;
++ (void)slideWebBrowserOut;
 @end

@@ -39,17 +39,18 @@
 #import <UIKit/UIKit.h>
 
 
+
 //This is a bit clunky; I'm using one class for two slightly different bookmark displays
 // the top level one has no parentid, and shows three categories "menu", "toolbar", and "unfiled"
 // every other level of the heirarchy has a parent id, and only has a single category
-@interface BookmarkPage : UITableViewController 
+@interface BookmarkPage : UITableViewController
 {
-  NSString* parentid;
-  NSArray* bookmarks;
-  NSMutableArray* topLevelBookmarks;
+    NSString *parentid;
+    NSArray *bookmarks;
+    NSMutableArray *topLevelBookmarks;
 }
 
-- (void) setParent:(NSString*) parent;
-- (void) refresh;
+- (void)setParent:(NSString *)parent;
+- (void)refresh;
 
 @end

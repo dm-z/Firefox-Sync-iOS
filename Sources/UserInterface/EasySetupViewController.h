@@ -43,55 +43,62 @@
 @class EasySetupViewController;
 @class JPAKEReporter;
 
+
+
 @protocol EasySetupViewControllerDelegate
-- (void) easySetupViewControllerDidLogin: (EasySetupViewController*) vc;
-- (void) easySetupViewControllerDidCancel: (EasySetupViewController*) vc;
-- (void) easySetupViewController: (EasySetupViewController*) vc didFailWithError: (NSError*) error;
-- (void) easySetupViewControllerDidRequestManualSetup: (EasySetupViewController*) vc;
+
+- (void)easySetupViewControllerDidLogin:(EasySetupViewController *)vc;
+- (void)easySetupViewControllerDidCancel:(EasySetupViewController *)vc;
+- (void)easySetupViewController:(EasySetupViewController *)vc
+               didFailWithError:(NSError *)error;
+- (void)easySetupViewControllerDidRequestManualSetup:(EasySetupViewController *)vc;
 @end
 
-@interface EasySetupViewController : UIViewController <JPAKEClientDelegate, UIAlertViewDelegate> {
-  @private
-	UILabel* _passwordLabel1;
-	UILabel* _passwordLabel2;
-	UILabel* _passwordLabel3;
-	UIView* _passwordView1;
-	UIView* _passwordView2;
-	UIView* _passwordView3;
-	UILabel* _statusLabel;
-	UILabel* _passcodeLabel;
-	UINavigationBar* _navigationBar;
-	UIActivityIndicatorView* _activityIndicator;
-	UIButton* _manualSetupButton;
-  @private
-    NSURL* _server;
-	id<EasySetupViewControllerDelegate> _delegate;
-	JPAKEReporter* _reporter;
-  @private
-	JPAKEClient* _client;
-  @private
-	CryptoUtils* _newCryptoManager;
+
+
+@interface EasySetupViewController : UIViewController <JPAKEClientDelegate, UIAlertViewDelegate>
+{
+@private
+    UILabel *_passwordLabel1;
+    UILabel *_passwordLabel2;
+    UILabel *_passwordLabel3;
+    UIView *_passwordView1;
+    UIView *_passwordView2;
+    UIView *_passwordView3;
+    UILabel *_statusLabel;
+    UILabel *_passcodeLabel;
+    UINavigationBar *_navigationBar;
+    UIActivityIndicatorView *_activityIndicator;
+    UIButton *_manualSetupButton;
+@private
+    NSURL *_server;
+    id <EasySetupViewControllerDelegate> _delegate;
+    JPAKEReporter *_reporter;
+@private
+    JPAKEClient *_client;
+@private
+    CryptoUtils *_newCryptoManager;
 }
 
-@property (nonatomic,assign) IBOutlet UILabel* passwordLabel1;
-@property (nonatomic,assign) IBOutlet UILabel* passwordLabel2;
-@property (nonatomic,assign) IBOutlet UILabel* passwordLabel3;
-@property (nonatomic,assign) IBOutlet UIView* passwordView1;
-@property (nonatomic,assign) IBOutlet UIView* passwordView2;
-@property (nonatomic,assign) IBOutlet UIView* passwordView3;
-@property (nonatomic,assign) IBOutlet UILabel* statusLabel;
-@property (nonatomic,assign) IBOutlet UINavigationBar* navigationBar;
-@property (nonatomic,assign) IBOutlet UIActivityIndicatorView* activityIndicator;
-@property (nonatomic,assign) IBOutlet UILabel* passcodeLabel;
-@property (nonatomic,assign) IBOutlet UIButton* manualSetupButton;
-@property (retain, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
-@property (retain, nonatomic) IBOutlet UILabel *helpLabel;
+@property(nonatomic, assign) IBOutlet UILabel *passwordLabel1;
+@property(nonatomic, assign) IBOutlet UILabel *passwordLabel2;
+@property(nonatomic, assign) IBOutlet UILabel *passwordLabel3;
+@property(nonatomic, assign) IBOutlet UIView *passwordView1;
+@property(nonatomic, assign) IBOutlet UIView *passwordView2;
+@property(nonatomic, assign) IBOutlet UIView *passwordView3;
+@property(nonatomic, assign) IBOutlet UILabel *statusLabel;
+@property(nonatomic, assign) IBOutlet UINavigationBar *navigationBar;
+@property(nonatomic, assign) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property(nonatomic, assign) IBOutlet UILabel *passcodeLabel;
+@property(nonatomic, assign) IBOutlet UIButton *manualSetupButton;
+@property(retain, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
+@property(retain, nonatomic) IBOutlet UILabel *helpLabel;
 
-@property (nonatomic,retain) NSURL* server;
-@property (nonatomic,assign) id<EasySetupViewControllerDelegate> delegate;
-@property (nonatomic,retain) JPAKEReporter* reporter;
+@property(nonatomic, retain) NSURL *server;
+@property(nonatomic, assign) id <EasySetupViewControllerDelegate> delegate;
+@property(nonatomic, retain) JPAKEReporter *reporter;
 
-- (IBAction) cancel;
-- (IBAction) manualSetup;
+- (IBAction)cancel;
+- (IBAction)manualSetup;
 
 @end

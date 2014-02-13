@@ -38,53 +38,55 @@
 #import <UIKit/UIKit.h>
 
 
-@interface SettingsController : UIViewController {
 
-  UIView*                   headerView;
-  UIView*                   contentView;
-  
-  UILabel*                  titleString;
-  UIImageView*              topHeader;
-  
-  UIActivityIndicatorView*  spinner;
-  UILabel*                  spinMessage;
-  
-  //stats & info
-  UILabel *userName;
-  
-  UILabel *numTabs;
-  UILabel *numBmks;
-  UILabel *numHist;
-  
-  UIButton *syncButton;
+@interface SettingsController : UIViewController
+{
+
+    UIView *headerView;
+    UIView *contentView;
+
+    UILabel *titleString;
+    UIImageView *topHeader;
+
+    UIActivityIndicatorView *spinner;
+    UILabel *spinMessage;
+
+    //stats & info
+    UILabel *userName;
+
+    UILabel *numTabs;
+    UILabel *numBmks;
+    UILabel *numHist;
+
+    UIButton *syncButton;
 }
 
-- (IBAction) resync:(id)sender;
-- (IBAction) signOut:(id)sender;
-- (IBAction) displayAboutScreen:(id)sender;
+- (IBAction)resync:(id)sender;
+- (IBAction)signOut:(id)sender;
+- (IBAction)displayAboutScreen:(id)sender;
 
-- (void) refresh;
+- (void)refresh;
 
-- (void) startSpinnerWithMessage: (NSString*)msg;
-- (void) changeSpinnerMessage: (NSString*)msg;
-- (void) stopSpinner;
+- (void)startSpinnerWithMessage:(NSString *)msg;
+- (void)changeSpinnerMessage:(NSString *)msg;
+- (void)stopSpinner;
 
-@property (nonatomic, retain) IBOutlet UIView  *headerView;
-@property (nonatomic, retain) IBOutlet UIView  *contentView;
+@property(nonatomic, retain) IBOutlet UIView *headerView;
+@property(nonatomic, retain) IBOutlet UIView *contentView;
 
-@property (nonatomic, retain) IBOutlet UILabel *titleString;
-@property (nonatomic, retain) IBOutlet UIImageView *topHeader;
+@property(nonatomic, retain) IBOutlet UILabel *titleString;
+@property(nonatomic, retain) IBOutlet UIImageView *topHeader;
 
-@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *spinner;
-@property (nonatomic, retain) IBOutlet UILabel *spinMessage;
+@property(nonatomic, retain) IBOutlet UIActivityIndicatorView *spinner;
+@property(nonatomic, retain) IBOutlet UILabel *spinMessage;
 
 
-@property (nonatomic, retain) IBOutlet UILabel *userName;
+@property(nonatomic, retain) IBOutlet UILabel *userName;
 
-@property (nonatomic, retain) IBOutlet UILabel *numTabs;
-@property (nonatomic, retain) IBOutlet UILabel *numBmks;
-@property (nonatomic, retain) IBOutlet UILabel *numHist;
+@property(nonatomic, retain) IBOutlet UILabel *numTabs;
+@property(nonatomic, retain) IBOutlet UILabel *numBmks;
+@property(nonatomic, retain) IBOutlet UILabel *numHist;
 
-@property (nonatomic, retain) IBOutlet UIButton *syncButton;
+@property(nonatomic, retain) IBOutlet UIButton *syncButton;
 
 @end

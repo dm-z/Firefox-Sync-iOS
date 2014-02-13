@@ -40,7 +40,9 @@
 #import "JPAKEReporter.h"
 #import "UIColor+appColors.h"
 
-JPAKEReporter* gSharedReporter = nil;
+JPAKEReporter *gSharedReporter = nil;
+
+
 
 @implementation WelcomePage
 
@@ -48,13 +50,14 @@ JPAKEReporter* gSharedReporter = nil;
 
 #pragma mark - view lifecycle
 
-- (void) viewDidLoad
+- (void)viewDidLoad
 {
-    NSString* language = [[NSLocale preferredLanguages] objectAtIndex: 0];
-	if ([language isEqualToString: @"ru"] || [language isEqualToString: @"id"]) {
-		_setupButton.titleLabel.font = [UIFont fontWithName: _setupButton.titleLabel.font.fontName
-			size: _setupButton.titleLabel.font.pointSize - 2.0];
-	}
+    NSString *language = [[NSLocale preferredLanguages] objectAtIndex:0];
+    if ([language isEqualToString:@"ru"] || [language isEqualToString:@"id"])
+    {
+        _setupButton.titleLabel.font = [UIFont fontWithName:_setupButton.titleLabel.font.fontName
+                                                       size:_setupButton.titleLabel.font.pointSize - 2.0];
+    }
 
     //if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
     {
@@ -69,101 +72,116 @@ JPAKEReporter* gSharedReporter = nil;
 
 - (void)setupLocaleStrings
 {
-    self.titleLabel.text = NSLocalizedString(@"SyncClient requires a Firefox Sync account. Use Firefox on your computer to create an account.",);
-    [self.setupButton setTitle:NSLocalizedString(@"I Have A Sync Account",) forState:UIControlStateNormal];
-    [self.setupButton setTitle:NSLocalizedString(@"I Have A Sync Account",) forState:UIControlStateHighlighted];
+    self.titleLabel.text = NSLocalizedString(@"SyncClient requires a Firefox Sync account. Use Firefox on your computer to create an account.", );
+    [self.setupButton setTitle:NSLocalizedString(@"I Have A Sync Account", )
+                      forState:UIControlStateNormal];
+    [self.setupButton setTitle:NSLocalizedString(@"I Have A Sync Account", )
+                      forState:UIControlStateHighlighted];
 }
 
-- (void) manualSetupViewControllerDidLogin: (ManualSetupViewController*) vc
+- (void)manualSetupViewControllerDidLogin:(ManualSetupViewController *)vc
 {
-	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"showedFirstRunPage"];
-	[[NSUserDefaults standardUserDefaults] synchronize];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"showedFirstRunPage"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 
-	[vc dismissModalViewControllerAnimated: NO];
-	[self dismissModalViewControllerAnimated: NO];
+    [vc dismissModalViewControllerAnimated:NO];
+    [self dismissModalViewControllerAnimated:NO];
 }
 
-- (void) manualSetupViewControllerDidCancel:(ManualSetupViewController *)vc
+- (void)manualSetupViewControllerDidCancel:(ManualSetupViewController *)vc
 {
-	[vc dismissModalViewControllerAnimated: YES];
+    [vc dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark -
 
-- (void) easySetupViewControllerDidLogin: (EasySetupViewController*) vc
+- (void)easySetupViewControllerDidLogin:(EasySetupViewController *)vc
 {
-	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"showedFirstRunPage"];
-	[[NSUserDefaults standardUserDefaults] synchronize];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"showedFirstRunPage"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 
-	[vc dismissModalViewControllerAnimated: NO];
-	[self dismissModalViewControllerAnimated: NO];
+    [vc dismissModalViewControllerAnimated:NO];
+    [self dismissModalViewControllerAnimated:NO];
 }
 
-- (void) easySetupViewControllerDidCancel: (EasySetupViewController*)vc
+- (void)easySetupViewControllerDidCancel:(EasySetupViewController *)vc
 {
-	[vc dismissModalViewControllerAnimated: YES];
+    [vc dismissModalViewControllerAnimated:YES];
 }
 
-- (void) easySetupViewController: (EasySetupViewController*) vc didFailWithError: (NSError*) error
+- (void)easySetupViewController:(EasySetupViewController *)vc
+               didFailWithError:(NSError *)error
 {
-	[vc dismissModalViewControllerAnimated: YES];
+    [vc dismissModalViewControllerAnimated:YES];
 
-	UIAlertView* alert = [[[UIAlertView alloc] initWithTitle: @"Received J-PAKE Error"
-		message: [error localizedDescription]
-			delegate: nil cancelButtonTitle: @"OK" otherButtonTitles: nil] autorelease];
-	[alert show];
+    UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Received J-PAKE Error"
+                                                     message:[error localizedDescription]
+                                                    delegate:nil
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles:nil] autorelease];
+    [alert show];
 }
 
-- (void) easySetupViewControllerDidRequestManualSetup: (EasySetupViewController*) vc
+- (void)easySetupViewControllerDidRequestManualSetup:(EasySetupViewController *)vc
 {
-	[vc dismissModalViewControllerAnimated: NO];
+    [vc dismissModalViewControllerAnimated:NO];
 
-	ManualSetupViewController* manualSetupViewController = [[ManualSetupViewController new] autorelease];
-	if (manualSetupViewController != nil) {
-		manualSetupViewController.delegate = self;
-		[self presentModalViewController: manualSetupViewController animated: YES];
-	}
+    ManualSetupViewController *manualSetupViewController = [[ManualSetupViewController new] autorelease];
+    if (manualSetupViewController != nil)
+    {
+        manualSetupViewController.delegate = self;
+        [self presentModalViewController:manualSetupViewController animated:YES];
+    }
 }
 
 #pragma mark - actions
 
-- (IBAction) presentEasySetupViewController;
+- (IBAction)presentEasySetupViewController;
 {
-	WeaveAppDelegate *delegate = (WeaveAppDelegate*)[[UIApplication sharedApplication] delegate];
+    WeaveAppDelegate *delegate = (WeaveAppDelegate *) [[UIApplication sharedApplication] delegate];
 
-	if ([delegate canConnectToInternet] == NO) {
-		UIAlertView* alert = [[UIAlertView alloc] initWithTitle: NSLocalizedString(@"Cannot Setup Sync", @"Cannot Setup Sync")
-			message: NSLocalizedString(@"No internet connection available", "no internet connection")
-				delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"ok") otherButtonTitles:nil];
-		[alert show];
-		[alert release];
-	} else {
-		EasySetupViewController* easySetupViewController = [[EasySetupViewController new] autorelease];
-		if (easySetupViewController != nil)
-		{
-			NSURL* server = [NSURL URLWithString: @"https://setup.services.mozilla.com"];
-			
+    if ([delegate canConnectToInternet] == NO)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Setup Sync", @"Cannot Setup Sync")
+                                                        message:NSLocalizedString(@"No internet connection available", "no internet connection")
+                                                       delegate:nil
+                                              cancelButtonTitle:NSLocalizedString(@"OK", @"ok")
+                                              otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+    }
+    else
+    {
+        EasySetupViewController *easySetupViewController = [[EasySetupViewController new] autorelease];
+        if (easySetupViewController != nil)
+        {
+            NSURL *server = [NSURL URLWithString:@"https://setup.services.mozilla.com"];
+
 #if defined(FXHOME_USE_STAGING_JPAKE)
 			server = [NSURL URLWithString: @"https://stage-setup.services.mozilla.com"];
 #endif
-			
-			if (gSharedReporter == nil) {
-				gSharedReporter = [[JPAKEReporter alloc] initWithServer: server];
-			}
-		
-			easySetupViewController.reporter = gSharedReporter;
-			easySetupViewController.server = server;
-			easySetupViewController.delegate = self;
-			[self presentModalViewController: easySetupViewController animated: YES];
-		}
-	}
+
+            if (gSharedReporter == nil)
+            {
+                gSharedReporter = [[JPAKEReporter alloc] initWithServer:server];
+            }
+
+            easySetupViewController.reporter = gSharedReporter;
+            easySetupViewController.server = server;
+            easySetupViewController.delegate = self;
+            [self presentModalViewController:easySetupViewController animated:YES];
+        }
+    }
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
     [_titleLabel release];
     [super dealloc];
 }
-- (void)viewDidUnload {
+
+- (void)viewDidUnload
+{
     [self setTitleLabel:nil];
     [super viewDidUnload];
 }
