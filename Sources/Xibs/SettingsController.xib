@@ -7,14 +7,20 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsController">
             <connections>
+                <outlet property="aboutButton" destination="42" id="lFe-Ku-eb6"/>
+                <outlet property="bookmarksLabel" destination="17" id="do4-hp-qaK"/>
                 <outlet property="contentView" destination="40" id="41"/>
                 <outlet property="headerView" destination="38" id="39"/>
+                <outlet property="historyLabel" destination="18" id="Y6v-et-yNs"/>
                 <outlet property="numBmks" destination="20" id="32"/>
                 <outlet property="numHist" destination="21" id="33"/>
                 <outlet property="numTabs" destination="19" id="31"/>
+                <outlet property="signOutButton" destination="4" id="WCy-DG-39o"/>
+                <outlet property="signedInLabel" destination="14" id="tdY-zo-okQ"/>
                 <outlet property="spinMessage" destination="12" id="28"/>
                 <outlet property="spinner" destination="11" id="29"/>
                 <outlet property="syncButton" destination="25" id="35"/>
+                <outlet property="tabsLabel" destination="16" id="roT-kK-eWO"/>
                 <outlet property="titleString" destination="13" id="36"/>
                 <outlet property="topHeader" destination="10" id="37"/>
                 <outlet property="userName" destination="15" id="30"/>

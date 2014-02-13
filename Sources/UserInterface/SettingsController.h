@@ -89,4 +89,11 @@
 
 @property(nonatomic, retain) IBOutlet UIButton *syncButton;
 
+@property (retain, nonatomic) IBOutlet UIButton *signOutButton;
+@property (retain, nonatomic) IBOutlet UIButton *aboutButton;
+@property (retain, nonatomic) IBOutlet UILabel *signedInLabel;
+@property (retain, nonatomic) IBOutlet UILabel *tabsLabel;
+@property (retain, nonatomic) IBOutlet UILabel *bookmarksLabel;
+@property (retain, nonatomic) IBOutlet UILabel *historyLabel;
+
 @end

@@ -97,6 +97,14 @@
 {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Settings", nil);
+    self.titleString.text = NSLocalizedString(@"Settings", nil);
+    [self.signOutButton setTitle:NSLocalizedString(@"Sign Out", nil) forState:UIControlStateNormal];
+    [self.syncButton setTitle:NSLocalizedString(@"Refresh", nil) forState:UIControlStateNormal];
+    [self.aboutButton setTitle:NSLocalizedString(@"About...", nil) forState:UIControlStateNormal];
+    self.signedInLabel.text = NSLocalizedString(@"Signed in as:", nil);
+    self.bookmarksLabel.text = NSLocalizedString(@"Bookmarks:", nil);
+    self.tabsLabel.text = NSLocalizedString(@"Tabs:", nil);
+    self.historyLabel.text = NSLocalizedString(@"History:", nil);
     //magic incantation that fixes resizing on rotate
     self.view.autoresizesSubviews = YES;
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -185,6 +193,12 @@
 
 - (void)viewDidUnload
 {
+    [self setHistoryLabel:nil];
+    [self setBookmarksLabel:nil];
+    [self setTabsLabel:nil];
+    [self setSignedInLabel:nil];
+    [self setAboutButton:nil];
+    [self setSignOutButton:nil];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -192,6 +206,12 @@
 
 - (void)dealloc
 {
+    [_signOutButton release];
+    [_aboutButton release];
+    [_signedInLabel release];
+    [_tabsLabel release];
+    [_bookmarksLabel release];
+    [_historyLabel release];
     [super dealloc];
 }
 
