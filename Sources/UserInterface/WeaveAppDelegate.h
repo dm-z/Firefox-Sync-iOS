@@ -37,7 +37,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "Store.h";
+#import "Store.h"//;
 #import "CryptoUtils.h"
 #import "Reachability.h"
 
@@ -49,64 +49,69 @@
 
 //#define TESTING
 
-@interface WeaveAppDelegate : NSObject <UIApplicationDelegate, UIAlertViewDelegate> 
+@interface WeaveAppDelegate : NSObject <UIApplicationDelegate, UIAlertViewDelegate>
 {
-  UIWindow*                 window;
-  UITabBarController*       tabBarController;
-  SearchResultsController*  searchResults;
-  TabBrowserController*     tabBrowser;
-  BookmarkNav*              bookmarkNav;
-  WebPageController*        webController;
-  SettingsController*       settings;
-    
-  BOOL                      hasInternetConnectivity;
-  Reachability*             internetReach;
+    UIWindow *window;
+    UITabBarController *tabBarController;
+    SearchResultsController *searchResults;
+    TabBrowserController *tabBrowser;
+    BookmarkNav *bookmarkNav;
+    WebPageController *webController;
+    SettingsController *settings;
 
-  //this is used to store the current orientation of the TabBarController.
-  //Sometimes it is off-screen, and the [controller interfaceOrientation] is not updated in that case,
-  // so I must keep track of it on my own.
-  UIInterfaceOrientation currentOrientation;
+    BOOL hasInternetConnectivity;
+    Reachability *internetReach;
+
+    //this is used to store the current orientation of the TabBarController.
+    //Sometimes it is off-screen, and the [controller interfaceOrientation] is not updated in that case,
+    // so I must keep track of it on my own.
+    UIInterfaceOrientation currentOrientation;
 }
 
 //put up an alert explaining what just went wrong
-- (void) reportErrorWithInfo: (NSDictionary*)errInfo;
+- (void)reportErrorWithInfo:(NSDictionary *)errInfo;
 
 //put up an alert view specific to authentication issues, allowing the user to either ignore the problem, or sign out
-- (void) reportAuthErrorWithMessage: (NSDictionary*)errInfo;
+- (void)reportAuthErrorWithMessage:(NSDictionary *)errInfo;
 
-- (BOOL) canConnectToInternet;
+- (BOOL)canConnectToInternet;
 
-- (void) startProgressSpinnersWithMessage:(NSString*)msg;
-- (void) changeProgressSpinnersMessage:(NSString*)msg;
-- (void) stopProgressSpinners;
+- (void)startProgressSpinnersWithMessage:(NSString *)msg;
+- (void)changeProgressSpinnersMessage:(NSString *)msg;
+- (void)stopProgressSpinners;
 
 
-- (void) refreshViews;
-- (void) login;
-- (void) eraseAllUserData;
+- (void)refreshViews;
+- (void)login;
+- (void)eraseAllUserData;
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
+- (void)   alertView:(UIAlertView *)alertView
+clickedButtonAtIndex:(NSInteger)buttonIndex;
 
 //we need to keep views that aren't currently displayed in the proper orientation so we _can_ display them
-- (void) rotateFullscreenView: (UIView*)theView toOrientation: (UIInterfaceOrientation)orientation;
+- (void)rotateFullscreenView:(UIView *)theView
+               toOrientation:(UIInterfaceOrientation)orientation;
 
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property(nonatomic, retain) IBOutlet UIWindow *window;
 
-@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
-@property (nonatomic, retain) IBOutlet WebPageController *webController;
+@property(nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+@property(nonatomic, retain) IBOutlet WebPageController *webController;
 
-@property (nonatomic, retain)  SearchResultsController *searchResults;
-@property (nonatomic, retain)  TabBrowserController *tabBrowser;
-@property (nonatomic, retain)  BookmarkNav *bookmarkNav;
-@property (nonatomic, retain)  SettingsController *settings;
+@property(nonatomic, retain) SearchResultsController *searchResults;
+@property(nonatomic, retain) TabBrowserController *tabBrowser;
+@property(nonatomic, retain) BookmarkNav *bookmarkNav;
+@property(nonatomic, retain) SettingsController *settings;
 
 @property UIInterfaceOrientation currentOrientation;
 
 @end
 
 
+
 @interface UITabBarController (Rotation)
-- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration;
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                                duration:(NSTimeInterval)duration;
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation;
 @end

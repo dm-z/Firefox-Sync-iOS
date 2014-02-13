@@ -41,6 +41,9 @@
 #import "EasySetupViewController.h"
 #import "WeaveAppDelegate.h"
 #import "Stockboy.h"
+#import "UIColor+appColors.h"
+
+
 
 @implementation EasySetupViewController
 
@@ -62,14 +65,14 @@
 
 #pragma mark -
 
-- (void) startLoginSpinner
+- (void)startLoginSpinner
 {
 //	[_spinner startAnimating];
 //	_spinnerView.hidden = NO;
 //	_cancelButton.enabled = NO;
 }
 
-- (void) stopLoginSpinner
+- (void)stopLoginSpinner
 {
 //	_spinnerView.hidden = YES;
 //	[_spinner stopAnimating];
@@ -78,184 +81,227 @@
 
 #pragma mark -
 
-- (void) authorize: (NSDictionary*)authDict
+- (void)authorize:(NSDictionary *)authDict
 {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 
-	_newCryptoManager = nil;
+    _newCryptoManager = nil;
 
-	//any sort of auth failure just means we catch it here and make them reenter the password
-	@try
-	{
-		_newCryptoManager = [[[CryptoUtils alloc ] initWithAccountName:[authDict objectForKey:@"user"]
-			password: [authDict objectForKey:@"pass"] andPassphrase:[authDict objectForKey:@"secret"]] retain];
-		if (_newCryptoManager) {
-			[self performSelectorOnMainThread:@selector(dismissLoginScreen) withObject:nil waitUntilDone:YES];
-		} else  {
-			@throw [NSException exceptionWithName:@"CryptoInitException" reason:@"unspecified failure" userInfo:nil];
-		}
-	}
-	
-	@catch (NSException *e) 
-	{
-		//I don't need to take different actions for different bad outcomes, at least in this case,
-		// because they all mean "failed to log in".  So I just report them.  In other situations,
-		// I might certainly need to do different things for different error conditions
-		[self performSelectorOnMainThread:@selector(authFailed:) withObject:[e reason] waitUntilDone:YES];
-		NSLog(@"Failed to initialize CryptoManager");
-	}
-	
-	@finally 
-	{
-		//stop the spinner, regardless
-		[self performSelectorOnMainThread:@selector(stopLoginSpinner) withObject:nil waitUntilDone:YES];
-		[pool drain];
-	}
+    //any sort of auth failure just means we catch it here and make them reenter the password
+    @try
+    {
+        _newCryptoManager = [[[CryptoUtils alloc] initWithAccountName:[authDict objectForKey:@"user"]
+                                                             password:[authDict objectForKey:@"pass"]
+                                                        andPassphrase:[authDict objectForKey:@"secret"]] retain];
+        if (_newCryptoManager)
+        {
+            [self performSelectorOnMainThread:@selector(dismissLoginScreen)
+                                   withObject:nil
+                                waitUntilDone:YES];
+        }
+        else
+        {
+            @throw [NSException exceptionWithName:@"CryptoInitException"
+                                           reason:@"unspecified failure"
+                                         userInfo:nil];
+        }
+    }
+
+    @catch (NSException *e)
+    {
+        //I don't need to take different actions for different bad outcomes, at least in this case,
+        // because they all mean "failed to log in".  So I just report them.  In other situations,
+        // I might certainly need to do different things for different error conditions
+        [self performSelectorOnMainThread:@selector(authFailed:)
+                               withObject:[e reason]
+                            waitUntilDone:YES];
+        NSLog(@"Failed to initialize CryptoManager");
+    }
+
+    @finally
+    {
+        //stop the spinner, regardless
+        [self performSelectorOnMainThread:@selector(stopLoginSpinner)
+                               withObject:nil
+                            waitUntilDone:YES];
+        [pool drain];
+    }
 }
 
-- (void) authFailed:(NSString*)message
+- (void)authFailed:(NSString *)message
 {
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle: NSLocalizedString(@"Login Failure", @"unable to login")
-		message:message delegate: self cancelButtonTitle: NSLocalizedString(@"OK", @"ok") otherButtonTitles: nil];
-	[alert show];
-	[alert release];    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Login Failure", @"unable to login")
+                                                    message:message
+                                                   delegate:self
+                                          cancelButtonTitle:NSLocalizedString(@"OK", @"ok")
+                                          otherButtonTitles:nil];
+    [alert show];
+    [alert release];
 }
-  
+
 /**
  * This is called when we have succesfully logged in. Call back to the delegate.
  */
-  
-- (void) dismissLoginScreen
+
+- (void)dismissLoginScreen
 {
-	[CryptoUtils assignManager:_newCryptoManager];
+    [CryptoUtils assignManager:_newCryptoManager];
 
-	//The user has now logged in successfully at least once, so set the flag to prevent
-	// showing the Welcome page from now on
+    //The user has now logged in successfully at least once, so set the flag to prevent
+    // showing the Welcome page from now on
 
-	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"showedFirstRunPage"];
-	[Stockboy restock];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"showedFirstRunPage"];
+    [Stockboy restock];
 
-	[_delegate easySetupViewControllerDidLogin: self];
+    [_delegate easySetupViewControllerDidLogin:self];
+}
+
+#pragma mark - view lifecycle
+
+- (void)viewDidLoad
+{
+    //if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
+    {
+        self.cancelButton.tintColor = [UIColor buttonsColor];
+    }
+
+    _passwordView1.layer.cornerRadius = 7;
+    _passwordView2.layer.cornerRadius = 7;
+    _passwordView3.layer.cornerRadius = 7;
+
+    // This is not the right way to do this but because we are under time pressure
+    // I am just setting the Passcode text directly here.
+    _passcodeLabel.text = NSLocalizedString(@"Passcode", @"Passcode");
+
+
+
+    // Adjust the button for some specific languages
+
+    NSString *language = [[NSLocale preferredLanguages] objectAtIndex:0];
+
+    NSSet *languagesThatNeedMoreSpace = [NSSet setWithObjects:@"fr", @"id", @"pt", nil];
+    NSSet *languagesThatNeedSmallerFont = [NSSet setWithObjects:@"tr", @"ru", nil];
+
+    if ([languagesThatNeedSmallerFont containsObject:language])
+    {
+        _manualSetupButton.titleLabel.font = [UIFont fontWithName:_manualSetupButton.titleLabel.font.fontName
+                                                             size:_manualSetupButton.titleLabel.font.pointSize - 1.5];
+        CGRect frame = _manualSetupButton.frame;
+        frame.origin.x -= 4;
+        frame.size.width += 8;
+        _manualSetupButton.frame = frame;
+    }
+
+    else if ([languagesThatNeedMoreSpace containsObject:language])
+    {
+        _manualSetupButton.titleLabel.font = [UIFont fontWithName:_manualSetupButton.titleLabel.font.fontName
+                                                             size:_manualSetupButton.titleLabel.font.pointSize - 1.5];
+        _manualSetupButton.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+        _manualSetupButton.titleLabel.textAlignment = UITextAlignmentCenter;
+        _manualSetupButton.titleLabel.numberOfLines = 2;
+        CGRect frame = _manualSetupButton.frame;
+        frame.origin.y -= 4;
+        frame.size.height += 8;
+        if ([language isEqualToString:@"fr"])
+        {
+            frame.origin.x -= 4;
+            frame.size.width += 8;
+        }
+        _manualSetupButton.frame = frame;
+    }
+
+    _client = [[JPAKEClient alloc] initWithServer:_server delegate:self reporter:_reporter];
+    [_client start];
+
+    [self setupLocaleStrings];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
+}
+
+#pragma mark - lifecycle
+
+- (void)dealloc
+{
+    [_client release];
+    [_server release];
+    [_reporter release];
+    [_helpLabel release];
+    [super dealloc];
+}
+
+#pragma mark - actions
+
+- (IBAction)cancel
+{
+    [_client cancel];
+}
+
+- (IBAction)manualSetup
+{
+    [_client abort];
+    [_delegate easySetupViewControllerDidRequestManualSetup:self];
 }
 
 #pragma mark -
 
-- (void) viewDidLoad
+- (void)        alertView:(UIAlertView *)alertView
+didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-	_passwordView1.layer.cornerRadius = 7;
-	_passwordView2.layer.cornerRadius = 7;
-	_passwordView3.layer.cornerRadius = 7;
-	
-	// This is not the right way to do this but because we are under time pressure
-	// I am just setting the Passcode text directly here.
-	_passcodeLabel.text = NSLocalizedString(@"Passcode", @"Passcode");
-
-
-
-	// Adjust the button for some specific languages
-
-	NSString* language = [[NSLocale preferredLanguages] objectAtIndex: 0];
-	
-	NSSet* languagesThatNeedMoreSpace = [NSSet setWithObjects: @"fr", @"id", @"pt" , nil];
-	NSSet* languagesThatNeedSmallerFont = [NSSet setWithObjects: @"tr", @"ru", nil];
-
-	if ([languagesThatNeedSmallerFont containsObject: language]) {
-		_manualSetupButton.titleLabel.font = [UIFont fontWithName: _manualSetupButton.titleLabel.font.fontName size: _manualSetupButton.titleLabel.font.pointSize - 1.5];
-		CGRect frame = _manualSetupButton.frame; frame.origin.x -= 4; frame.size.width += 8;
-		_manualSetupButton.frame = frame;
-	}
-	
-	else if ([languagesThatNeedMoreSpace containsObject: language]) {
-		_manualSetupButton.titleLabel.font = [UIFont fontWithName: _manualSetupButton.titleLabel.font.fontName size: _manualSetupButton.titleLabel.font.pointSize - 1.5];
-		_manualSetupButton.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
-		_manualSetupButton.titleLabel.textAlignment = UITextAlignmentCenter;
-		_manualSetupButton.titleLabel.numberOfLines = 2;
-		CGRect frame = _manualSetupButton.frame; frame.origin.y -= 4; frame.size.height += 8;
-		if ([language isEqualToString: @"fr"]) {
-			frame.origin.x -= 4; frame.size.width += 8;
-		}
-		_manualSetupButton.frame = frame;
-	}
-
-	_client = [[JPAKEClient alloc] initWithServer: _server delegate: self reporter: _reporter];
-	[_client start];
+    switch (buttonIndex)
+    {
+        case 0: // Cancel
+            [_delegate easySetupViewControllerDidCancel:self];
+            break;
+        case 1: // Try Again
+            _passwordLabel1.text = nil;
+            _passwordLabel2.text = nil;
+            _passwordLabel3.text = nil;
+            _activityIndicator.hidden = NO;
+            [_activityIndicator startAnimating];
+            [_client start];
+            break;
+        case 2: // Manual Setup
+            [_delegate easySetupViewControllerDidRequestManualSetup:self];
+            break;
+    }
 }
 
-- (void) viewDidAppear:(BOOL)animated
+#pragma mark - private
+
+- (void)setupLocaleStrings
 {
-	[[UIApplication sharedApplication] setIdleTimerDisabled: YES];
+    self.navigationBar.topItem.title = NSLocalizedString(@"Connect to Sync", nil);
+    [self.manualSetupButton setTitle:NSLocalizedString(@"I am not near my Computer", nil)
+                            forState:UIControlStateNormal];
+    self.helpLabel.text = NSLocalizedString(@"From a Firefox Sync-connected computer, go to Sync options and select \"Add a device.\"", nil);
 }
 
-- (void) viewDidDisappear:(BOOL)animated
+- (NSString *)formatCode:(NSString *)code
 {
-	[[UIApplication sharedApplication] setIdleTimerDisabled: NO];
+    return [NSString stringWithFormat:@"%c %c %c %c",
+                                      [code characterAtIndex:0],
+                                      [code characterAtIndex:1],
+                                      [code characterAtIndex:2],
+                                      [code characterAtIndex:3]];
 }
 
-#pragma mark -
-
-- (void) dealloc
+- (void)   client:(JPAKEClient *)client
+didGenerateSecret:(NSString *)secret
 {
-	[_client release];
-	[_server release];
-	[_reporter release];
-	[super dealloc];
-}
+    _activityIndicator.hidden = YES;
 
-#pragma mark -
-
-- (IBAction) cancel
-{
-	[_client cancel];
-}
-
-- (IBAction) manualSetup
-{
-	[_client abort];
-	[_delegate easySetupViewControllerDidRequestManualSetup: self];
-}
-
-#pragma mark -
-
-- (void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-	switch (buttonIndex)
-	{
-		case 0: // Cancel
-			[_delegate easySetupViewControllerDidCancel: self];
-			break;
-		case 1: // Try Again
-			_passwordLabel1.text = nil;
-			_passwordLabel2.text = nil;
-			_passwordLabel3.text = nil;
-			_activityIndicator.hidden = NO;
-			[_activityIndicator startAnimating];
-			[_client start];
-			break;
-		case 2: // Manual Setup
-			[_delegate easySetupViewControllerDidRequestManualSetup: self];
-			break;
-	}
-}
-
-#pragma mark -
-
-- (NSString*) formatCode: (NSString*) code
-{
-	return [NSString stringWithFormat: @"%c %c %c %c",
-		[code characterAtIndex: 0],
-		[code characterAtIndex: 1],
-		[code characterAtIndex: 2],
-		[code characterAtIndex: 3]];
-}
-
-- (void) client: (JPAKEClient*) client didGenerateSecret: (NSString*) secret
-{
-	_activityIndicator.hidden = YES;
-
-	NSArray* components = [secret componentsSeparatedByString: @"-"];
-	_passwordLabel1.text = [self formatCode: [components objectAtIndex: 0]];
-	_passwordLabel2.text = [self formatCode: [components objectAtIndex: 1]];
-	_passwordLabel3.text = [self formatCode: [components objectAtIndex: 2]];
+    NSArray *components = [secret componentsSeparatedByString:@"-"];
+    _passwordLabel1.text = [self formatCode:[components objectAtIndex:0]];
+    _passwordLabel2.text = [self formatCode:[components objectAtIndex:1]];
+    _passwordLabel3.text = [self formatCode:[components objectAtIndex:2]];
 }
 
 /**
@@ -263,49 +309,64 @@
  * a high level error message and give him a change of retry, cancel and manual setup.
  */
 
-- (void) client: (JPAKEClient*) client didFailWithError: (NSError*) error
+- (void)  client:(JPAKEClient *)client
+didFailWithError:(NSError *)error
 {
-	[_activityIndicator stopAnimating];
+    [_activityIndicator stopAnimating];
 
-	UIAlertView* alertView = [[[UIAlertView alloc] initWithTitle: NSLocalizedString(@"Cannot Setup Sync", @"Cannot Setup Sync")
-		message: NSLocalizedString(@"SyncClient could not connect to Sync. Would you like to try again?", @"SyncClient could not connect to Sync. Would you like to try again?")
-			delegate: self cancelButtonTitle: NSLocalizedString(@"Cancel", @"Cancel") 
-				otherButtonTitles: NSLocalizedString(@"Try Again", @"Try Again"), NSLocalizedString(@"Manual Setup", @"Manual Setup"), nil] autorelease];
+    UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Setup Sync", @"Cannot Setup Sync")
+                                                         message:NSLocalizedString(@"SyncClient could not connect to Sync. Would you like to try again?", @"SyncClient could not connect to Sync. Would you like to try again?")
+                                                        delegate:self
+                                               cancelButtonTitle:NSLocalizedString(@"Cancel", @"Cancel")
+                                               otherButtonTitles:NSLocalizedString(@"Try Again", @"Try Again"),
+                                                                 NSLocalizedString(@"Manual Setup", @"Manual Setup"),
+                                                                 nil] autorelease];
 
-	[alertView show];
+    [alertView show];
 }
 
-- (void) client: (JPAKEClient*) client didReceivePayload: (id) payload
+- (void)   client:(JPAKEClient *)client
+didReceivePayload:(id)payload
 {
-	[self startLoginSpinner];
+    [self startLoginSpinner];
 
-	// If we got a custom server then we configure it right away
-	
-	NSString* server = [payload objectForKey: @"serverURL"];
-	if (server != nil && [server length] != 0) {
-		[[NSUserDefaults standardUserDefaults] setBool: YES forKey: @"useCustomServer"];
-		[[NSUserDefaults standardUserDefaults] setObject: server forKey: @"customServerURL"];
-		[[NSUserDefaults standardUserDefaults] synchronize];
-	} else {
-		[[NSUserDefaults standardUserDefaults] setBool: NO forKey: @"useCustomServer"];
-		[[NSUserDefaults standardUserDefaults] removeObjectForKey: @"customServerURL"];
-		[[NSUserDefaults standardUserDefaults] synchronize];
-	}
+    // If we got a custom server then we configure it right away
 
-	NSDictionary* authDict = [NSDictionary dictionaryWithObjectsAndKeys:
-		[payload objectForKey: @"account"], @"user",
-		[payload objectForKey: @"password"], @"pass",
-		[payload objectForKey: @"synckey"], @"secret",
-		nil];
+    NSString *server = [payload objectForKey:@"serverURL"];
+    if (server != nil && [server length] != 0)
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"useCustomServer"];
+        [[NSUserDefaults standardUserDefaults] setObject:server forKey:@"customServerURL"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    else
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"useCustomServer"];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"customServerURL"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 
-	NSThread* authorizer = [[[NSThread alloc] initWithTarget:self selector:@selector(authorize:) object:authDict] autorelease];
-	[authorizer start];
+    NSDictionary *authDict = [NSDictionary dictionaryWithObjectsAndKeys:
+            [payload objectForKey:@"account"], @"user",
+            [payload objectForKey:@"password"], @"pass",
+            [payload objectForKey:@"synckey"], @"secret",
+            nil];
+
+    NSThread *authorizer = [[[NSThread alloc] initWithTarget:self
+                                                    selector:@selector(authorize:)
+                                                      object:authDict] autorelease];
+    [authorizer start];
 }
 
-- (void) clientDidCancel: (JPAKEClient*) client
+- (void)clientDidCancel:(JPAKEClient *)client
 {
-	[_delegate easySetupViewControllerDidCancel: self];
+    [_delegate easySetupViewControllerDidCancel:self];
 }
 
+- (void)viewDidUnload
+{
+    [self setHelpLabel:nil];
+    [super viewDidUnload];
+}
 @end
 	

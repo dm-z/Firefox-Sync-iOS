@@ -40,51 +40,59 @@
 #import "BookmarkNav.h"
 #import "BookmarkPage.h"
 
+
+
 @implementation BookmarkNav
 
 //mojo to make auto-rotation work
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
-  self.view.autoresizesSubviews = YES;
-  self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-  
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.title = NSLocalizedString(@"Bookmarks", nil);
+    self.view.autoresizesSubviews = YES;
+    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-  return YES;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
 }
 
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
+
+    // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
+- (void)viewDidUnload
+{
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
 }
 
 
-- (void)dealloc {
+- (void)dealloc
+{
     [super dealloc];
 }
 
 
-- (void) refresh
+- (void)refresh
 {
-  //refresh only the top view, for now?  Will lower views DTRT when redisplayed?
-  //[(BookmarkPage*)self.topViewController refresh];
-  
-  //this crashes, not clear why atm
-  for (id page in [self viewControllers])
-   {
-   [page refresh];
-   }
-   
-  
+    //refresh only the top view, for now?  Will lower views DTRT when redisplayed?
+    //[(BookmarkPage*)self.topViewController refresh];
+
+    //this crashes, not clear why atm
+    for (id page in [self viewControllers])
+    {
+        [page refresh];
+    }
+
+
 }
 
 

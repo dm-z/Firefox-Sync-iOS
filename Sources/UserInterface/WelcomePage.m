@@ -36,123 +36,153 @@
  ***** END LICENSE BLOCK *****/
 
 #import "WelcomePage.h"
-#import "AccountHelp.h"
 #import "WeaveAppDelegate.h"
 #import "JPAKEReporter.h"
+#import "UIColor+appColors.h"
 
-JPAKEReporter* gSharedReporter = nil;
+JPAKEReporter *gSharedReporter = nil;
+
+
 
 @implementation WelcomePage
 
 @synthesize setupButton = _setupButton;
-@synthesize helpButton = _helpButton;
 
-#pragma mark -
+#pragma mark - view lifecycle
 
-- (void) viewDidLoad
+- (void)viewDidLoad
 {
-	NSString* language = [[NSLocale preferredLanguages] objectAtIndex: 0];
-	if ([language isEqualToString: @"ru"] || [language isEqualToString: @"id"]) {
-		_setupButton.titleLabel.font = [UIFont fontWithName: _setupButton.titleLabel.font.fontName
-			size: _setupButton.titleLabel.font.pointSize - 2.0];
-		_helpButton.titleLabel.font = [UIFont fontWithName: _helpButton.titleLabel.font.fontName
-			size: _helpButton.titleLabel.font.pointSize - 2.0];
-	}
+    NSString *language = [[NSLocale preferredLanguages] objectAtIndex:0];
+    if ([language isEqualToString:@"ru"] || [language isEqualToString:@"id"])
+    {
+        _setupButton.titleLabel.font = [UIFont fontWithName:_setupButton.titleLabel.font.fontName
+                                                       size:_setupButton.titleLabel.font.pointSize - 2.0];
+    }
+
+    //if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
+    {
+        self.setupButton.backgroundColor = [UIColor buttonsColor];
+        self.setupButton.layer.cornerRadius = 4.0f;
+        [self.setupButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    }
+    [self setupLocaleStrings];
+}
+
+#pragma mark - private
+
+- (void)setupLocaleStrings
+{
+    self.titleLabel.text = NSLocalizedString(@"SyncClient requires a Firefox Sync account. Use Firefox on your computer to create an account.", );
+    [self.setupButton setTitle:NSLocalizedString(@"I Have A Sync Account", )
+                      forState:UIControlStateNormal];
+    [self.setupButton setTitle:NSLocalizedString(@"I Have A Sync Account", )
+                      forState:UIControlStateHighlighted];
+}
+
+- (void)manualSetupViewControllerDidLogin:(ManualSetupViewController *)vc
+{
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"showedFirstRunPage"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
+    [vc dismissModalViewControllerAnimated:NO];
+    [self dismissModalViewControllerAnimated:NO];
+}
+
+- (void)manualSetupViewControllerDidCancel:(ManualSetupViewController *)vc
+{
+    [vc dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark -
 
-- (void) manualSetupViewControllerDidLogin: (ManualSetupViewController*) vc
+- (void)easySetupViewControllerDidLogin:(EasySetupViewController *)vc
 {
-	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"showedFirstRunPage"];
-	[[NSUserDefaults standardUserDefaults] synchronize];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"showedFirstRunPage"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 
-	[vc dismissModalViewControllerAnimated: NO];
-	[self dismissModalViewControllerAnimated: NO];
+    [vc dismissModalViewControllerAnimated:NO];
+    [self dismissModalViewControllerAnimated:NO];
 }
 
-- (void) manualSetupViewControllerDidCancel:(ManualSetupViewController *)vc
+- (void)easySetupViewControllerDidCancel:(EasySetupViewController *)vc
 {
-	[vc dismissModalViewControllerAnimated: YES];
+    [vc dismissModalViewControllerAnimated:YES];
 }
 
-#pragma mark -
-
-- (void) easySetupViewControllerDidLogin: (EasySetupViewController*) vc
+- (void)easySetupViewController:(EasySetupViewController *)vc
+               didFailWithError:(NSError *)error
 {
-	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"showedFirstRunPage"];
-	[[NSUserDefaults standardUserDefaults] synchronize];
+    [vc dismissModalViewControllerAnimated:YES];
 
-	[vc dismissModalViewControllerAnimated: NO];
-	[self dismissModalViewControllerAnimated: NO];
+    UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Received J-PAKE Error"
+                                                     message:[error localizedDescription]
+                                                    delegate:nil
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles:nil] autorelease];
+    [alert show];
 }
 
-- (void) easySetupViewControllerDidCancel: (EasySetupViewController*)vc
+- (void)easySetupViewControllerDidRequestManualSetup:(EasySetupViewController *)vc
 {
-	[vc dismissModalViewControllerAnimated: YES];
+    [vc dismissModalViewControllerAnimated:NO];
+
+    ManualSetupViewController *manualSetupViewController = [[ManualSetupViewController new] autorelease];
+    if (manualSetupViewController != nil)
+    {
+        manualSetupViewController.delegate = self;
+        [self presentModalViewController:manualSetupViewController animated:YES];
+    }
 }
 
-- (void) easySetupViewController: (EasySetupViewController*) vc didFailWithError: (NSError*) error
+#pragma mark - actions
+
+- (IBAction)presentEasySetupViewController;
 {
-	[vc dismissModalViewControllerAnimated: YES];
+    WeaveAppDelegate *delegate = (WeaveAppDelegate *) [[UIApplication sharedApplication] delegate];
 
-	UIAlertView* alert = [[[UIAlertView alloc] initWithTitle: @"Received J-PAKE Error"
-		message: [error localizedDescription]
-			delegate: nil cancelButtonTitle: @"OK" otherButtonTitles: nil] autorelease];
-	[alert show];
-}
+    if ([delegate canConnectToInternet] == NO)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Setup Sync", @"Cannot Setup Sync")
+                                                        message:NSLocalizedString(@"No internet connection available", "no internet connection")
+                                                       delegate:nil
+                                              cancelButtonTitle:NSLocalizedString(@"OK", @"ok")
+                                              otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+    }
+    else
+    {
+        EasySetupViewController *easySetupViewController = [[EasySetupViewController new] autorelease];
+        if (easySetupViewController != nil)
+        {
+            NSURL *server = [NSURL URLWithString:@"https://setup.services.mozilla.com"];
 
-- (void) easySetupViewControllerDidRequestManualSetup: (EasySetupViewController*) vc
-{
-	[vc dismissModalViewControllerAnimated: NO];
-
-	ManualSetupViewController* manualSetupViewController = [[ManualSetupViewController new] autorelease];
-	if (manualSetupViewController != nil) {
-		manualSetupViewController.delegate = self;
-		[self presentModalViewController: manualSetupViewController animated: YES];
-	}
-}
-
-#pragma mark -
-
-- (IBAction) presentEasySetupViewController;
-{
-	WeaveAppDelegate *delegate = (WeaveAppDelegate*)[[UIApplication sharedApplication] delegate];
-
-	if ([delegate canConnectToInternet] == NO) {
-		UIAlertView* alert = [[UIAlertView alloc] initWithTitle: NSLocalizedString(@"Cannot Setup Sync", @"Cannot Setup Sync")
-			message: NSLocalizedString(@"No internet connection available", "no internet connection")
-				delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"ok") otherButtonTitles:nil];
-		[alert show];
-		[alert release];
-	} else {
-		EasySetupViewController* easySetupViewController = [[EasySetupViewController new] autorelease];
-		if (easySetupViewController != nil)
-		{
-			NSURL* server = [NSURL URLWithString: @"https://setup.services.mozilla.com"];
-			
 #if defined(FXHOME_USE_STAGING_JPAKE)
 			server = [NSURL URLWithString: @"https://stage-setup.services.mozilla.com"];
 #endif
-			
-			if (gSharedReporter == nil) {
-				gSharedReporter = [[JPAKEReporter alloc] initWithServer: server];
-			}
-		
-			easySetupViewController.reporter = gSharedReporter;
-			easySetupViewController.server = server;
-			easySetupViewController.delegate = self;
-			[self presentModalViewController: easySetupViewController animated: YES];
-		}
-	}
+
+            if (gSharedReporter == nil)
+            {
+                gSharedReporter = [[JPAKEReporter alloc] initWithServer:server];
+            }
+
+            easySetupViewController.reporter = gSharedReporter;
+            easySetupViewController.server = server;
+            easySetupViewController.delegate = self;
+            [self presentModalViewController:easySetupViewController animated:YES];
+        }
+    }
 }
 
-- (IBAction) presentAccountHelpViewController;
+- (void)dealloc
 {
-	AccountHelp* accountHelp = [[AccountHelp new] autorelease];
-	if (accountHelp != nil) {
-		[self presentModalViewController: accountHelp animated:YES];
-	}
+    [_titleLabel release];
+    [super dealloc];
 }
 
+- (void)viewDidUnload
+{
+    [self setTitleLabel:nil];
+    [super viewDidUnload];
+}
 @end

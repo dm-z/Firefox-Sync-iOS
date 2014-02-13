@@ -38,18 +38,18 @@
 #import <UIKit/UIKit.h>
 #import "EasySetupViewController.h"
 #import "ManualSetupViewController.h"
-#import "AccountHelp.h"
 
-@interface WelcomePage : UIViewController <EasySetupViewControllerDelegate,ManualSetupViewControllerDelegate> {
-  @private
-	UIButton* _setupButton;
-	UIButton* _helpButton;
+
+
+@interface WelcomePage : UIViewController <EasySetupViewControllerDelegate, ManualSetupViewControllerDelegate>
+{
+@private
+    UIButton *_setupButton;
 }
 
-@property (nonatomic,assign) IBOutlet UIButton* setupButton;
-@property (nonatomic,assign) IBOutlet UIButton* helpButton;
+@property(nonatomic, assign) IBOutlet UIButton *setupButton;
+@property(retain, nonatomic) IBOutlet UILabel *titleLabel;
 
-- (IBAction) presentEasySetupViewController;
-- (IBAction) presentAccountHelpViewController;
+- (IBAction)presentEasySetupViewController;
 
 @end

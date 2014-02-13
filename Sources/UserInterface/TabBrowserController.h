@@ -38,24 +38,25 @@
 #import <UIKit/UIKit.h>
 
 
+
 @interface TabBrowserController : UIViewController <UITableViewDelegate>
 {
-  NSArray* retainedTabs;
-  UITableView* myTable;
-  
-  UILabel*                  titleString;
-  UIImageView*              topHeader;
-  UIView*                   headerView;
+    NSArray *retainedTabs;
+    UITableView *myTable;
+
+    UILabel *titleString;
+    UIImageView *topHeader;
+    UIView *headerView;
 
 }
 
-- (void) refresh;
+- (void)refresh;
 
 
-@property (nonatomic, retain) IBOutlet UITableView* myTable;
+@property(nonatomic, retain) IBOutlet UITableView *myTable;
 
-@property (nonatomic, retain) IBOutlet UILabel *titleString;
-@property (nonatomic, retain) IBOutlet UIImageView *topHeader;
-@property (nonatomic, retain) IBOutlet UIView *headerView;
+@property(nonatomic, retain) IBOutlet UILabel *titleString;
+@property(nonatomic, retain) IBOutlet UIImageView *topHeader;
+@property(nonatomic, retain) IBOutlet UIView *headerView;
 
 @end

@@ -42,6 +42,8 @@
 #import "Store.h"
 #import "TapActionController.h"
 
+
+
 @implementation TabBrowserController
 
 @synthesize myTable;
@@ -58,12 +60,13 @@
 }
 */
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
-  
-  //magic incantation that fixes resizing on rotate
-  self.view.autoresizesSubviews = YES;
-  self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.title = NSLocalizedString(@"Tabs", nil);
+    //magic incantation that fixes resizing on rotate
+    self.view.autoresizesSubviews = YES;
+    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 }
 
 
@@ -77,9 +80,9 @@
 //{
 //}
 
-- (void) refresh
-{ 
-  [myTable reloadData];
+- (void)refresh
+{
+    [myTable reloadData];
 }
 
 /*
@@ -101,158 +104,172 @@
 }
 */
 
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
+
+    // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
+- (void)viewDidUnload
+{
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
 }
 
 
 #pragma mark Table view methods
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+- (NSString *)tableView:(UITableView *)tableView
+titleForHeaderInSection:(NSInteger)section
+{
     return [[retainedTabs objectAtIndex:section] objectForKey:@"client"];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-  [retainedTabs release];
-  retainedTabs = [[[Store getStore] getTabs] retain];
-  return [retainedTabs count];
+    [retainedTabs release];
+    retainedTabs = [[[Store getStore] getTabs] retain];
+    return [retainedTabs count];
 }
 
 
 // Customize the number of rows in the table view.
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return [[[retainedTabs objectAtIndex:section] objectForKey:@"tabs"] count];
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
+    return [[[retainedTabs objectAtIndex:section] objectForKey:@"tabs"] count];
 }
 
 
 //Note: this table cell code is nearly identical to the same method in searchresults and bookmarks,
 // but we want to be able to easily make them display differently, so it is replicated
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  //NOTE: I'm now sharing table view cells across the app
-  static NSString *CellIdentifier = @"URL_CELL";
-  
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-  if (cell == nil) {
-    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
-  }
-  
-  NSDictionary* tabItem = [[[retainedTabs objectAtIndex:indexPath.section] objectForKey:@"tabs"] objectAtIndex:indexPath.row];
-    
-  cell.textLabel.text = [tabItem objectForKey:@"title"];
-  cell.detailTextLabel.text = [tabItem objectForKey:@"url"];
-  cell.accessoryType = UITableViewCellAccessoryNone;
+    //NOTE: I'm now sharing table view cells across the app
+    static NSString *CellIdentifier = @"URL_CELL";
 
-  //set it to the default to start
-  cell.imageView.image = [UIImage imageNamed:[tabItem objectForKey:@"icon"]];
-  
-  return cell;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                       reuseIdentifier:CellIdentifier] autorelease];
+    }
+
+    NSDictionary *tabItem = [[[retainedTabs objectAtIndex:indexPath.section] objectForKey:@"tabs"] objectAtIndex:indexPath.row];
+
+    cell.textLabel.text = [tabItem objectForKey:@"title"];
+    cell.detailTextLabel.text = [tabItem objectForKey:@"url"];
+    cell.accessoryType = UITableViewCellAccessoryNone;
+
+    //set it to the default to start
+    cell.imageView.image = [UIImage imageNamed:[tabItem objectForKey:@"icon"]];
+
+    return cell;
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
+- (void)      tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
-	
-	WeaveAppDelegate* appDelegate = (WeaveAppDelegate *)[[UIApplication sharedApplication] delegate];
-	if ([appDelegate canConnectToInternet])
-	{
-		[WebPageController openURL: cell.detailTextLabel.text withTitle: cell.textLabel.text];		
-	}
-	else 
-	{
-		//no connectivity, put up alert
-		NSDictionary* errInfo = [NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedString(@"Cannot Load Page", @"unable to load page"), @"title", 
-			NSLocalizedString(@"No internet connection available", "no internet connection"), @"message", nil];
-		[appDelegate performSelectorOnMainThread:@selector(reportErrorWithInfo:) withObject:errInfo waitUntilDone:NO];          
-	}
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 
-	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+    WeaveAppDelegate *appDelegate = (WeaveAppDelegate *) [[UIApplication sharedApplication] delegate];
+    if ([appDelegate canConnectToInternet])
+    {
+        [WebPageController openURL:cell.detailTextLabel.text withTitle:cell.textLabel.text];
+    }
+    else
+    {
+        //no connectivity, put up alert
+        NSDictionary *errInfo = [NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedString(@"Cannot Load Page", @"unable to load page"), @"title",
+                                                                           NSLocalizedString(@"No internet connection available", "no internet connection"), @"message",
+                                                                           nil];
+        [appDelegate performSelectorOnMainThread:@selector(reportErrorWithInfo:)
+                                      withObject:errInfo
+                                   waitUntilDone:NO];
+    }
+
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
-
-- (void)dealloc 
+- (void)dealloc
 {
-  [super dealloc];
+    [super dealloc];
 }
 
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-  return YES;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
 }
 
 //we are going to some effort here for UI consistency.
 // I'm sizing some UI elements when we rotate, so they match the size and font of the System widgets, 
 // so that all our pages look as much alike as possible
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                                duration:(NSTimeInterval)duration
 {
-  CGRect f, newFrame;
+    CGRect f, newFrame;
 
-  WeaveAppDelegate* appDelegate = (WeaveAppDelegate *)[[UIApplication sharedApplication] delegate];
-  BOOL fromVertical = (appDelegate.currentOrientation == UIInterfaceOrientationPortrait || appDelegate.currentOrientation == UIInterfaceOrientationPortraitUpsideDown);
-  
-  if (!fromVertical && (toInterfaceOrientation == UIInterfaceOrientationPortrait || toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown))
-  {
-      //set the title font to 20
-      titleString.font = [UIFont boldSystemFontOfSize:20];
-      //load the big header
-      topHeader.image = [UIImage imageNamed:@"header.png"];
-    
-    
-    f = headerView.frame;
-    newFrame = CGRectMake(f.origin.x,
-                          f.origin.y,
-                          f.size.width,
-                          f.size.height + 12);
-    headerView.frame = newFrame;
-    
-    //resize the table
-    f = myTable.frame;
-    newFrame = CGRectMake(f.origin.x,
-                          f.origin.y + 12,
-                          f.size.width,
-                          f.size.height - 12);
+    WeaveAppDelegate *appDelegate = (WeaveAppDelegate *) [[UIApplication sharedApplication] delegate];
+    BOOL fromVertical = (appDelegate.currentOrientation == UIInterfaceOrientationPortrait || appDelegate.currentOrientation == UIInterfaceOrientationPortraitUpsideDown);
 
-    myTable.frame = newFrame;
-    
-    
-  }
-  else if (fromVertical && (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight))
-  {
-    //set the title font to 16
-    titleString.font = [UIFont boldSystemFontOfSize:16];
-    //load the small header
-    topHeader.image = [UIImage imageNamed:@"short_header.png"];
-    
-    
-    f = headerView.frame;
-    newFrame = CGRectMake(f.origin.x,
-                                 f.origin.y,
-                                 f.size.width,
-                                 f.size.height - 12);
-    headerView.frame = newFrame;
-    
-    
-    
-    //resize the table
-    f = myTable.frame;
-    newFrame = CGRectMake(f.origin.x,
-                          f.origin.y - 12,
-                          f.size.width,
-                          f.size.height + 12);
-    
-    myTable.frame = newFrame;
-  }
+    if (! fromVertical && (toInterfaceOrientation == UIInterfaceOrientationPortrait || toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown))
+    {
+        //set the title font to 20
+        titleString.font = [UIFont boldSystemFontOfSize:20];
+        //load the big header
+        topHeader.image = [UIImage imageNamed:@"header.png"];
+
+
+        f = headerView.frame;
+        newFrame = CGRectMake(f.origin.x,
+                f.origin.y,
+                f.size.width,
+                f.size.height + 12);
+        headerView.frame = newFrame;
+
+        //resize the table
+        f = myTable.frame;
+        newFrame = CGRectMake(f.origin.x,
+                f.origin.y + 12,
+                f.size.width,
+                f.size.height - 12);
+
+        myTable.frame = newFrame;
+
+
+    }
+    else if (fromVertical && (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight))
+    {
+        //set the title font to 16
+        titleString.font = [UIFont boldSystemFontOfSize:16];
+        //load the small header
+        topHeader.image = [UIImage imageNamed:@"short_header.png"];
+
+
+        f = headerView.frame;
+        newFrame = CGRectMake(f.origin.x,
+                f.origin.y,
+                f.size.width,
+                f.size.height - 12);
+        headerView.frame = newFrame;
+
+
+
+        //resize the table
+        f = myTable.frame;
+        newFrame = CGRectMake(f.origin.x,
+                f.origin.y - 12,
+                f.size.width,
+                f.size.height + 12);
+
+        myTable.frame = newFrame;
+    }
 }
 
 

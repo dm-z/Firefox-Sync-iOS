@@ -40,60 +40,63 @@
 #import "AuthDialog.h"
 
 
+
 @interface WebPageController : UIViewController <UIWebViewDelegate>
 {
-  UIWebView*  webView;
-  UIView*     headerView;
-  UIView*     footerView;
-  
-  UIActivityIndicatorView *spinner;
-  
-  UILabel*                  titleString;
-  UIImageView*              topHeader;
-  UIBarButtonItem*          forwardButton;
-  UIBarButtonItem*          backButton;
-  UIBarButtonItem*          actionButton;
-  
-  //this is used to store the current orientation of the web view controller.
-  //Sometimes it is off-screen, and the [controller interfaceOrientation] is not updated in that case,
-  // so I must keep track of it on my own.
-  UIInterfaceOrientation currentOrientation;
-  
-  NSURLAuthenticationChallenge* _challenge;
-  NSURLRequest*                 _location;
-  NSURLConnection*              _connection;
-  NSURL*                        _basicAuthEnhancedDestinationURL;
+    UIWebView *webView;
+    UIView *headerView;
+    UIView *footerView;
 
-  NSURL* _locationURL; // The original URL that we were asked to load. We keep it around for the Share functionality.
+    UIActivityIndicatorView *spinner;
+
+    UILabel *titleString;
+    UIImageView *topHeader;
+    UIBarButtonItem *forwardButton;
+    UIBarButtonItem *backButton;
+    UIBarButtonItem *actionButton;
+
+    //this is used to store the current orientation of the web view controller.
+    //Sometimes it is off-screen, and the [controller interfaceOrientation] is not updated in that case,
+    // so I must keep track of it on my own.
+    UIInterfaceOrientation currentOrientation;
+
+    NSURLAuthenticationChallenge *_challenge;
+    NSURLRequest *_location;
+    NSURLConnection *_connection;
+    NSURL *_basicAuthEnhancedDestinationURL;
+
+    NSURL *_locationURL; // The original URL that we were asked to load. We keep it around for the Share functionality.
 }
 
-@property (nonatomic, retain) IBOutlet UIView *headerView;
-@property (nonatomic, retain) IBOutlet UIView *footerView;
+@property(nonatomic, retain) IBOutlet UIView *headerView;
+@property(nonatomic, retain) IBOutlet UIView *footerView;
 
 
-@property (nonatomic, retain) IBOutlet UILabel *titleString;
-@property (nonatomic, retain) IBOutlet UIImageView *topHeader;
+@property(nonatomic, retain) IBOutlet UILabel *titleString;
+@property(nonatomic, retain) IBOutlet UIImageView *topHeader;
 
-@property (nonatomic, retain) IBOutlet UIWebView *webView;
-@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *spinner;
+@property(nonatomic, retain) IBOutlet UIWebView *webView;
+@property(nonatomic, retain) IBOutlet UIActivityIndicatorView *spinner;
 
-@property (nonatomic, retain) IBOutlet UIBarButtonItem* forwardButton;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem* backButton;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem* actionButton;
+@property(nonatomic, retain) IBOutlet UIBarButtonItem *forwardButton;
+@property(nonatomic, retain) IBOutlet UIBarButtonItem *backButton;
+@property(nonatomic, retain) IBOutlet UIBarButtonItem *actionButton;
 
 @property UIInterfaceOrientation currentOrientation;
 
 
-- (void) loadLocation:(NSString*)location withTitle: (NSString*)title;
-- (void) stopLoadingAndAnimation;
+- (void)loadLocation:(NSString *)location
+           withTitle:(NSString *)title;
+- (void)stopLoadingAndAnimation;
 
-- (IBAction) done: (id)sender;
-- (IBAction) forward:(id)sender;
-- (IBAction) back: (id)sender;
-- (IBAction) reload: (id)sender;
-- (IBAction) exportURL: (id)sender;
+- (IBAction)done:(id)sender;
+- (IBAction)forward:(id)sender;
+- (IBAction)back:(id)sender;
+- (IBAction)reload:(id)sender;
+- (IBAction)exportURL:(id)sender;
 
 // Helper function that either opens the URL in the built-in browser or in a native app
-+ (void) openURL: (NSString*) destination withTitle: (NSString*) title;
++ (void)openURL:(NSString *)destination
+      withTitle:(NSString *)title;
 
 @end

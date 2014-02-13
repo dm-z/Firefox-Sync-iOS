@@ -39,12 +39,15 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 //Mostly a facade to allow overriding a few fucntions of UINavigationController.
 // No significant behavior changes
-@interface BookmarkNav : UINavigationController {
+@interface BookmarkNav : UINavigationController
+{
 
 }
 
-- (void) refresh;
+- (void)refresh;
 
 @end

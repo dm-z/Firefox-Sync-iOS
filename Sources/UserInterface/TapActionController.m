@@ -42,200 +42,215 @@
 #import "NSURL+IFUnicodeURL.h"
 
 
+
 @implementation TapActionController
 
-- (id) initWithLocation:(NSString*)loc
+- (id)initWithLocation:(NSString *)loc
 {
-  if ((self = [super init])) 
-  {
-    location = [loc retain];
-		[self retain]; // I am responsible for cleaning up after myself
-  }
-  return self;
+    if ((self = [super init]))
+    {
+        location = [loc retain];
+        [self retain]; // I am responsible for cleaning up after myself
+    }
+    return self;
 }
 
 //View sliding methods
-+ (void) slideWebBrowserIn
++ (void)slideWebBrowserIn
 {
-  WeaveAppDelegate* appDelegate = (WeaveAppDelegate *)[[UIApplication sharedApplication] delegate];
+    WeaveAppDelegate *appDelegate = (WeaveAppDelegate *) [[UIApplication sharedApplication] delegate];
 
-  
-  // get the root view, so we can slide things in and out of it
-  UIView *parentView = appDelegate.window;
-  
-  // get the normal content view, rootview
-  UIView *contentView = appDelegate.tabBarController.view;
-  
-  //get the web browser view
-  UIView *webView = appDelegate.webController.view;
-  
-  
-  // remove the tab bar view, and insert the web view
-  [contentView removeFromSuperview];
-  
-  [parentView addSubview:webView];
 
-  NSString *direction = kCATransitionFromLeft;
-  
-  switch (appDelegate.currentOrientation) {
-    case UIInterfaceOrientationPortrait:
-      direction = kCATransitionFromRight;
-      break;
-    case UIInterfaceOrientationPortraitUpsideDown:
-      direction = kCATransitionFromLeft;
-      break;        
-    case UIInterfaceOrientationLandscapeLeft:
-      direction = kCATransitionFromBottom;
-      break;
-    case UIInterfaceOrientationLandscapeRight:
-      direction = kCATransitionFromTop;
-      break;
-  }
-  
-  // animate the change we just made
-  CATransition *animation = [CATransition animation];
-  [animation setDuration:0.25];
-  [animation setType:kCATransitionPush];
-  [animation setSubtype:direction];
-  [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-  
-  [[parentView layer] addAnimation:animation forKey:@"showWebView"];
+    // get the root view, so we can slide things in and out of it
+    UIView *parentView = appDelegate.window;
 
-}  
+    // get the normal content view, rootview
+    UIView *contentView = appDelegate.tabBarController.view;
 
-+ (void) slideWebBrowserOut
+    //get the web browser view
+    UIView *webView = appDelegate.webController.view;
+
+
+    // remove the tab bar view, and insert the web view
+    [contentView removeFromSuperview];
+
+    [parentView addSubview:webView];
+
+    NSString *direction = kCATransitionFromLeft;
+
+    switch (appDelegate.currentOrientation)
+    {
+        case UIInterfaceOrientationPortrait:
+            direction = kCATransitionFromRight;
+            break;
+        case UIInterfaceOrientationPortraitUpsideDown:
+            direction = kCATransitionFromLeft;
+            break;
+        case UIInterfaceOrientationLandscapeLeft:
+            direction = kCATransitionFromBottom;
+            break;
+        case UIInterfaceOrientationLandscapeRight:
+            direction = kCATransitionFromTop;
+            break;
+    }
+
+    // animate the change we just made
+    CATransition *animation = [CATransition animation];
+    [animation setDuration:0.25];
+    [animation setType:kCATransitionPush];
+    [animation setSubtype:direction];
+    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+
+    [[parentView layer] addAnimation:animation forKey:@"showWebView"];
+
+}
+
++ (void)slideWebBrowserOut
 {
-  WeaveAppDelegate* appDelegate = (WeaveAppDelegate *)[[UIApplication sharedApplication] delegate];
-  
-  // get the root view, so we can slide things in and out of it
-  UIView *parentView = appDelegate.window;
+    WeaveAppDelegate *appDelegate = (WeaveAppDelegate *) [[UIApplication sharedApplication] delegate];
 
-  // get the normal content view, the tab bar controller
-  UIView *contentView = appDelegate.tabBarController.view;
-  
-  //get the web browser view
-  UIView *webView = appDelegate.webController.view;
-  
-  
-  // remove the web view, and insert the tab bar view
-  [webView removeFromSuperview];
-  
-  [parentView addSubview:contentView];
+    // get the root view, so we can slide things in and out of it
+    UIView *parentView = appDelegate.window;
 
-  NSString *direction = kCATransitionFromLeft;
+    // get the normal content view, the tab bar controller
+    UIView *contentView = appDelegate.tabBarController.view;
 
-  switch (appDelegate.webController.currentOrientation) {
-    case UIInterfaceOrientationPortrait:
-      direction = kCATransitionFromLeft;
-      break;
-    case UIInterfaceOrientationPortraitUpsideDown:
-      direction = kCATransitionFromRight;
-      break;      
-    case UIInterfaceOrientationLandscapeLeft:
-      direction = kCATransitionFromTop;
-      break;
-    case UIInterfaceOrientationLandscapeRight:
-      direction = kCATransitionFromBottom;
-      break;
-  }
-  
-  
-  // animate the change we just made
-  CATransition *animation = [CATransition animation];
-  [animation setDuration:0.25];
-  [animation setType:kCATransitionPush];
-  [animation setSubtype:direction];
-  [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-  
-  [[parentView layer] addAnimation:animation forKey:@"showTabBar"];
-}  
+    //get the web browser view
+    UIView *webView = appDelegate.webController.view;
+
+
+    // remove the web view, and insert the tab bar view
+    [webView removeFromSuperview];
+
+    [parentView addSubview:contentView];
+
+    NSString *direction = kCATransitionFromLeft;
+
+    switch (appDelegate.webController.currentOrientation)
+    {
+        case UIInterfaceOrientationPortrait:
+            direction = kCATransitionFromLeft;
+            break;
+        case UIInterfaceOrientationPortraitUpsideDown:
+            direction = kCATransitionFromRight;
+            break;
+        case UIInterfaceOrientationLandscapeLeft:
+            direction = kCATransitionFromTop;
+            break;
+        case UIInterfaceOrientationLandscapeRight:
+            direction = kCATransitionFromBottom;
+            break;
+    }
+
+
+    // animate the change we just made
+    CATransition *animation = [CATransition animation];
+    [animation setDuration:0.25];
+    [animation setType:kCATransitionPush];
+    [animation setSubtype:direction];
+    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+
+    [[parentView layer] addAnimation:animation forKey:@"showTabBar"];
+}
 
 
 //ActionSheet methods
 //this presents the 'what do you want to do now?' sheet that slides up when you choose a web destination from any of the lists
-- (void) chooseAction
+- (void)chooseAction
 {
-    UIActionSheet *action = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", @"cancel") 
-                                         destructiveButtonTitle:nil 
-                                              otherButtonTitles:NSLocalizedString(@"View in Safari", @"launch safari to display the url"), 
-                                                                NSLocalizedString(@"Email URL", @"send the url via email"), 
-                                                                NSLocalizedString(@"Copy URL", @"copy the url to the clipboard"), nil];
-    
+    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil
+                                                        delegate:self
+                                               cancelButtonTitle:NSLocalizedString(@"Cancel", @"cancel")
+                                          destructiveButtonTitle:nil
+                                               otherButtonTitles:NSLocalizedString(@"View in Safari", @"launch safari to display the url"),
+                                                                 NSLocalizedString(@"Email URL", @"send the url via email"),
+                                                                 NSLocalizedString(@"Copy URL", @"copy the url to the clipboard"),
+                                                                 nil];
 
-    WeaveAppDelegate* appDelegate = (WeaveAppDelegate *)[[UIApplication sharedApplication] delegate];
+
+    WeaveAppDelegate *appDelegate = (WeaveAppDelegate *) [[UIApplication sharedApplication] delegate];
     [action showFromTabBar:appDelegate.tabBarController.tabBar];
     [action release];
 }
 
 
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void) actionSheet:(UIActionSheet *)actionSheet
+clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-	// Incorrectly using URLWithUncodeString here. Fix for #575888 - "FF Home unable to open double-byte"
-	// pages in Safari. This is a workaround and can be taken out when the desktop correctly encoded urls as
-	// noted in #586082.
-  
-	NSURL* url = [NSURL URLWithUnicodeString: location];
-  
-	switch (buttonIndex)
-	{
-		case 0: //safari
+    // Incorrectly using URLWithUncodeString here. Fix for #575888 - "FF Home unable to open double-byte"
+    // pages in Safari. This is a workaround and can be taken out when the desktop correctly encoded urls as
+    // noted in #586082.
+
+    NSURL *url = [NSURL URLWithUnicodeString:location];
+
+    switch (buttonIndex)
     {
-			if (![[UIApplication sharedApplication] openURL: url]) {
-				NSLog(@"Unable to open url '%@'", location);
-			}
-			break;
+        case 0: //safari
+        {
+            if (! [[UIApplication sharedApplication] openURL:url])
+            {
+                NSLog(@"Unable to open url '%@'", location);
+            }
+            break;
+        }
+        case 1: //email
+        {
+            NSString *emailSubject = NSLocalizedString(@"Sending you a link", @"email subject");
+            NSString *emailContent = NSLocalizedString(@"Here is that site we talked about:", @"email content");
+            NSString *content = [NSString stringWithFormat:@"subject=%@&body=%@\n%@",
+                                                           emailSubject,
+                                                           emailContent,
+                                                           [url absoluteString]];
+            NSString *mailto = [NSString stringWithFormat:@"mailto:?%@",
+                                                          [content stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+
+            NSURL *mailtoURL = [NSURL URLWithString:mailto];
+            if ([[UIApplication sharedApplication] canOpenURL:mailtoURL])
+            {
+                [[UIApplication sharedApplication] openURL:mailtoURL];
+            }
+            else
+            {
+                NSLog(@"Cannot send email: unavailable or unconfigured");
+            }
+
+            break;
+        }
+        case 2: //copy
+        {
+            UIPasteboard *pboard = [UIPasteboard generalPasteboard];
+            pboard.URL = url;
+            pboard.string = [url absoluteString];
+            break;
+        }
+        case 3: //cancel, do nothing
+        {
+            break;
+        }
     }
-		case 1: //email
-		{
-			NSString *emailSubject = NSLocalizedString(@"Sending you a link", @"email subject");
-			NSString *emailContent = NSLocalizedString(@"Here is that site we talked about:", @"email content");
-			NSString *content = [NSString stringWithFormat:@"subject=%@&body=%@\n%@", emailSubject, emailContent, [url absoluteString]];  
-			NSString *mailto = [NSString stringWithFormat:@"mailto:?%@", [content stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];  
-      
-			NSURL* mailtoURL = [NSURL URLWithString: mailto];  
-			if ([[UIApplication sharedApplication] canOpenURL: mailtoURL]) {
-				[[UIApplication sharedApplication] openURL: mailtoURL];
-			} else {
-				NSLog(@"Cannot send email: unavailable or unconfigured");
-			}
-      
-			break;
-		}
-		case 2: //copy 
-		{
-			UIPasteboard *pboard = [UIPasteboard generalPasteboard];
-			pboard.URL = url;
-			pboard.string = [url absoluteString];
-			break;	
-		}
-		case 3: //cancel, do nothing
-		{
-			break;
-		}
-	}
-  [self release];
+    [self release];
 }
 
 
-
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-}
-
-
-- (void)dealloc 
+- (void)didReceiveMemoryWarning
 {
-  [location release];
-  [super dealloc];
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+
+    // Release any cached data, images, etc that aren't in use.
+}
+
+- (void)viewDidUnload
+{
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+
+- (void)dealloc
+{
+    [location release];
+    [super dealloc];
 }
 
 

@@ -38,16 +38,17 @@
 #import <UIKit/UIKit.h>
 
 
+
 @interface LogoutController : UIViewController
 {
-  UIView* spinnerView;
-  UIActivityIndicatorView* spinner;
+    UIView *spinnerView;
+    UIActivityIndicatorView *spinner;
 }
 
-- (IBAction) logout:(id)sender;
-- (IBAction) doNotLogout:(id)sender;
+- (IBAction)logout:(id)sender;
+- (IBAction)doNotLogout:(id)sender;
 
-@property (nonatomic, retain) IBOutlet UIView *spinnerView;
-@property (nonatomic, retain) IBOutlet UIActivityIndicatorView* spinner;
+@property(nonatomic, retain) IBOutlet UIView *spinnerView;
+@property(nonatomic, retain) IBOutlet UIActivityIndicatorView *spinner;
 
 @end

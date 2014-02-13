@@ -12,93 +12,35 @@
 #import "TapActionController.h"
 
 
+
 @implementation AboutScreen
 
-- (IBAction) done
+- (IBAction)done
 {
-  WeaveAppDelegate* appDelegate = (WeaveAppDelegate *)[[UIApplication sharedApplication] delegate];
-  [[appDelegate settings] dismissModalViewControllerAnimated:YES];
+    WeaveAppDelegate *appDelegate = (WeaveAppDelegate *) [[UIApplication sharedApplication] delegate];
+    [[appDelegate settings] dismissModalViewControllerAnimated:YES];
 }
 
-- (IBAction) termsOfService
+- (void)viewDidLoad
 {
-  WeaveAppDelegate* appDelegate = (WeaveAppDelegate *)[[UIApplication sharedApplication] delegate];
-  
-  if ([appDelegate canConnectToInternet])
-  {
-    [[appDelegate settings] dismissModalViewControllerAnimated:NO];
-
-    NSString* destString = [Stockboy getURIForKey:@"TOS URL"];
-
-    WebPageController* web = [appDelegate webController];
-    [TapActionController slideWebBrowserIn]; 
-    [web loadLocation: destString withTitle: NSLocalizedString(@"Terms Of Service", @"terms of service")];
-  }
-  else 
-  {
-    //no connectivity, put up alert
-    NSDictionary* errInfo = [NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedString(@"Cannot Load Page", @"unable to load page"), @"title", 
-                             NSLocalizedString(@"No internet connection available", "no internet connection"), @"message", nil];
-    [appDelegate performSelectorOnMainThread:@selector(reportErrorWithInfo:) withObject:errInfo waitUntilDone:NO];      
-  }
-}
-
-- (IBAction) privacyPolicy
-{
-  WeaveAppDelegate* appDelegate = (WeaveAppDelegate *)[[UIApplication sharedApplication] delegate];
-  
-  if ([appDelegate canConnectToInternet])
-  {
-    [[appDelegate settings] dismissModalViewControllerAnimated:NO];
-    
-    NSString* destString = [Stockboy getURIForKey:@"PP URL"];
-    
-    WebPageController* web = [appDelegate webController];
-    [TapActionController slideWebBrowserIn]; 
-    [web loadLocation: destString withTitle: NSLocalizedString(@"Privacy Policy", @"privacy policy")];
-  }
-  else 
-  {
-    //no connectivity, put up alert
-    NSDictionary* errInfo = [NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedString(@"Cannot Load Page", @"unable to load page"), @"title", 
-                             NSLocalizedString(@"No internet connection available", "no internet connection"), @"message", nil];
-    [appDelegate performSelectorOnMainThread:@selector(reportErrorWithInfo:) withObject:errInfo waitUntilDone:NO];      
-  }  
-}
-
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
     [super viewDidLoad];
-  hasRotatedOnce = NO;
+    self.textLabel.text = NSLocalizedString(@"Mozilla, Firefox, and the Mozilla, Firefox, and SyncClient logos are trademarks of the Mozilla Foundation.", nil);
+    [self.doneButton setTitle:NSLocalizedString(@"Done", nil) forState:UIControlStateNormal];
 }
 
-
-
-// Override to allow orientations other than the default portrait orientation.
-//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
-//{
-//  return NO;
-//}
-
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
+    [self setTextLabel:nil];
+    [self setDoneButton:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 
-- (void)dealloc {
+- (void)dealloc
+{
+    [_textLabel release];
+    [_doneButton release];
     [super dealloc];
 }
-
 
 @end

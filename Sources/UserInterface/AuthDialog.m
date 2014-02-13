@@ -38,61 +38,66 @@
 #import "AuthDialog.h"
 
 
+
 @implementation AuthDialog
 
 @synthesize nameField;
 @synthesize passField;
 
--(void) viewDidLoad
+- (void)viewDidLoad
 {
-  [super viewDidLoad];
+    [super viewDidLoad];
 }
 
-- (void) viewDidAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
-  [nameField becomeFirstResponder];
+    [nameField becomeFirstResponder];
 }
 
 
-- (void) clearFields
+- (void)clearFields
 {
-  nameField.text = nil;
-  passField.text = nil;
+    nameField.text = nil;
+    passField.text = nil;
 }
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-  if (textField == nameField)
-  {
-    [passField becomeFirstResponder];
-  }
-  else 
-  {
-    [self login:nil];
-  }
-  return NO;
+    if (textField == nameField)
+    {
+        [passField becomeFirstResponder];
+    }
+    else
+    {
+        [self login:nil];
+    }
+    return NO;
 }
 
 
-
-
-- (IBAction) login:(id)sender
+- (IBAction)login:(id)sender
 {
-  NSString* name = nameField.text?nameField.text:[NSString string];
-  NSString* pass = passField.text?passField.text:[NSString string];
-  
-  NSDictionary* result = [NSDictionary dictionaryWithObjectsAndKeys: name, @"name", pass, @"pass", nil];
-    
-  WeaveAppDelegate* appDelegate = (WeaveAppDelegate *)[[UIApplication sharedApplication] delegate];
-  [[appDelegate webController] performSelectorOnMainThread:@selector(authenticateWith:) withObject:result waitUntilDone:NO];
+    NSString *name = nameField.text ? nameField.text : [NSString string];
+    NSString *pass = passField.text ? passField.text : [NSString string];
+
+    NSDictionary *result = [NSDictionary dictionaryWithObjectsAndKeys:name, @"name",
+                                                                      pass, @"pass",
+                                                                      nil];
+
+    WeaveAppDelegate *appDelegate = (WeaveAppDelegate *) [[UIApplication sharedApplication] delegate];
+    [[appDelegate webController] performSelectorOnMainThread:@selector(authenticateWith:)
+                                                  withObject:result
+                                               waitUntilDone:NO];
 }
 
 
-- (IBAction) cancel:(id)sender
+- (IBAction)cancel:(id)sender
 {
-  WeaveAppDelegate* appDelegate = (WeaveAppDelegate *)[[UIApplication sharedApplication] delegate];
-  [[appDelegate webController] performSelectorOnMainThread:@selector(cancelAuth) withObject:nil waitUntilDone:NO];
+    WeaveAppDelegate *appDelegate = (WeaveAppDelegate *) [[UIApplication sharedApplication] delegate];
+    [[appDelegate webController] performSelectorOnMainThread:@selector(cancelAuth)
+                                                  withObject:nil
+                                               waitUntilDone:NO];
 }
 
 
@@ -113,14 +118,14 @@
 //}
 
 
-- (void)didReceiveMemoryWarning 
+- (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload 
+- (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -128,7 +133,7 @@
 }
 
 
-- (void)dealloc 
+- (void)dealloc
 {
     [super dealloc];
 }

@@ -37,19 +37,20 @@
 #import <UIKit/UIKit.h>
 
 
+
 @interface AuthDialog : UIViewController <UITextFieldDelegate, UIAlertViewDelegate>
 {
-  UITextField *nameField;
-	UITextField *passField;
+    UITextField *nameField;
+    UITextField *passField;
 
 }
 
-@property (nonatomic, retain) IBOutlet UITextField *nameField;
-@property (nonatomic, retain) IBOutlet UITextField *passField;
+@property(nonatomic, retain) IBOutlet UITextField *nameField;
+@property(nonatomic, retain) IBOutlet UITextField *passField;
 
-- (void) clearFields;
+- (void)clearFields;
 
-- (IBAction) login:(id)sender;
-- (IBAction) cancel:(id)sender;
+- (IBAction)login:(id)sender;
+- (IBAction)cancel:(id)sender;
 
 @end

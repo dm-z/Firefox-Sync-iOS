@@ -9,16 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
-@interface AboutScreen : UIViewController 
-{
-  BOOL hasRotatedOnce;
-}
 
-- (IBAction) done;
+@interface AboutScreen : UIViewController
 
-- (IBAction) termsOfService;
+@property(retain, nonatomic) IBOutlet UILabel *textLabel;
+@property(retain, nonatomic) IBOutlet UIButton *doneButton;
 
-- (IBAction) privacyPolicy;
-
+- (IBAction)done;
 
 @end
