@@ -55,7 +55,7 @@ JPAKEReporter* gSharedReporter = nil;
 		_setupButton.titleLabel.font = [UIFont fontWithName: _setupButton.titleLabel.font.fontName
 			size: _setupButton.titleLabel.font.pointSize - 2.0];
 	}
-
+    
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
     {
         self.setupButton.backgroundColor = [UIColor buttonsColor];

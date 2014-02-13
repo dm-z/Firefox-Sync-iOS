@@ -12,7 +12,7 @@
 
 + (UIColor *)buttonsColor
 {
-    return [UIColor colorWithRed:0.35f green:0.35f blue:0.81f alpha:1.0f];
+    return [UIColor colorWithRed:1.0f green:0.58f blue:0.21f alpha:1.0f];
 }
 
 + (UIColor *)navigationItemColor

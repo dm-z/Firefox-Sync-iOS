@@ -145,9 +145,9 @@
 
 - (void) viewDidLoad
 {
-    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
+    //if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
     {
-        self.cancelButton.tintColor = [UIColor navigationItemColor];
+        self.cancelButton.tintColor = [UIColor buttonsColor];
     }
 
 	_passwordView1.layer.cornerRadius = 7;
