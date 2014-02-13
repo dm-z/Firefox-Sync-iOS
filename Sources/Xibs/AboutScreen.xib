@@ -21,7 +21,9 @@
                     <rect key="frame" x="100" y="501" width="120" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                    <state key="normal" title="Done"/>
+                    <state key="normal" title="Done">
+                        <color key="titleColor" red="0.97254908080000002" green="0.58039218189999997" blue="0.2117647231" alpha="1" colorSpace="deviceRGB"/>
+                    </state>
                     <connections>
                         <action selector="done" destination="-1" eventType="touchUpInside" id="7"/>
                     </connections>
