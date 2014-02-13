@@ -24,3 +24,7 @@ Plans on improoving
 4. Remove old frameworks/change for new ones.
 5. Add external browsers to open menu (Chrome, Safari etc.)
 6. Maybe iPad version.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/DZozulya/firefox-sync-ios/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
