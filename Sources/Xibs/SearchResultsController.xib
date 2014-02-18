@@ -29,7 +29,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         </view>
-                        <searchBar opaque="NO" multipleTouchEnabled="YES" contentMode="top" barStyle="black" text="" placeholder="Search Tabs, Bookmarks, History" translucent="NO" id="32">
+                        <searchBar opaque="NO" multipleTouchEnabled="YES" contentMode="top" searchBarStyle="minimal" text="" placeholder="Search Tabs, Bookmarks, History" translucent="NO" id="32">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

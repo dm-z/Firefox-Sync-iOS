@@ -72,7 +72,7 @@ static NSMutableArray *gFreshSearchHits = nil;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.searchDisplayController.searchBar.placeholder = NSLocalizedString(@"Search Tabs, Bookmarks, History", nil);
     //magic incantation that fixes resizing on rotate
     self.view.autoresizesSubviews = YES;
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -94,7 +94,6 @@ static NSMutableArray *gFreshSearchHits = nil;
             }
         }
     }
-
 
     searchHits = nil;
 }
