@@ -17,7 +17,7 @@
 
 + (UIColor *)navigationItemColor
 {
-    return [UIColor whiteColor];
+    return [UIColor colorWithRed:0.19f green:0.33f blue:0.56f alpha:1.0f];
 }
 
 

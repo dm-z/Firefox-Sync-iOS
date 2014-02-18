@@ -75,10 +75,14 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <nil key="simulatedDestinationMetrics"/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="black" id="92">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" translucent="NO" id="92">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.1602962272" green="0.31223725920000001" blue="0.47826086960000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.97254908080000002" green="0.58039218189999997" blue="0.2117647231" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="barTintColor" red="0.18823531269999999" green="0.32941177490000001" blue="0.5647059083" alpha="1" colorSpace="deviceRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <viewControllers>
                         <viewController nibName="BookmarkPage" id="90" customClass="BookmarkPage">

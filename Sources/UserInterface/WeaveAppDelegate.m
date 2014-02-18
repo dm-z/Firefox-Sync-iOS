@@ -121,9 +121,9 @@
 - (BOOL)          application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //Removing black box at the bottom of 4 inch screen
     self.window.frame = [UIScreen mainScreen].bounds;
-
+    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setTextColor:[UIColor whiteColor]];
+    
     // Setup the defaults
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     if (userDefaults != nil)

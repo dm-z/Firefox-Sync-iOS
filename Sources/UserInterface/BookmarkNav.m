@@ -39,8 +39,7 @@
 
 #import "BookmarkNav.h"
 #import "BookmarkPage.h"
-
-
+#import "UIColor+appColors.h"
 
 @implementation BookmarkNav
 
@@ -49,7 +48,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = NSLocalizedString(@"Bookmarks", nil);
+    //self.navigationBar.tintColor = [UIColor buttonsColor];
+    //self.navigationBar.backgroundColor = [UIColor navigationItemColor];
+    self.navigationBar.topItem.title = NSLocalizedString(@"Bookmarks", nil);
     self.view.autoresizesSubviews = YES;
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
