@@ -138,9 +138,18 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+- (void)viewDidLoad
+{
+    [self.cancelButton setTitle:NSLocalizedString(@"Cancel",) forState:UIControlStateNormal];
+    [self.signOutButton setTitle:NSLocalizedString(@"Sign Out",) forState:UIControlStateNormal];
+    self.textLabel.text = NSLocalizedString(@"Signing out will erase your SyncClient information from this device, but will require signing in and a full refresh next time. ",);
+}
 
 - (void)viewDidUnload
 {
+    [self setCancelButton:nil];
+    [self setSignOutButton:nil];
+    [self setTextLabel:nil];
     // Release any retained subviews of the main view.
     spinner = nil;
 }
@@ -149,6 +158,9 @@
 - (void)dealloc
 {
     [spinnerView release];
+    [_textLabel release];
+    [_signOutButton release];
+    [_cancelButton release];
     [super dealloc];
 }
 

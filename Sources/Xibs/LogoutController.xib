@@ -7,8 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogoutController">
             <connections>
+                <outlet property="cancelButton" destination="8" id="sPS-3r-yhf"/>
+                <outlet property="signOutButton" destination="7" id="tdg-pQ-C4y"/>
                 <outlet property="spinner" destination="13" id="16"/>
                 <outlet property="spinnerView" destination="12" id="15"/>
+                <outlet property="textLabel" destination="9" id="HLn-78-6YE"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -17,35 +20,23 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="top" image="Background.png" id="6">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                </imageView>
-                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7">
-                    <rect key="frame" x="85" y="290" width="150" height="42"/>
+                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7">
+                    <rect key="frame" x="20" y="351" width="120" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                    <state key="normal" title="Sign Out" backgroundImage="button-medium-default.png">
-                        <color key="titleColor" red="1" green="0.4279510359" blue="0.38074389120000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted" backgroundImage="button-medium-pressed.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="Sign Out">
+                        <color key="titleColor" red="0.97254908080000002" green="0.58039218189999997" blue="0.2117647231" alpha="1" colorSpace="deviceRGB"/>
                     </state>
                     <connections>
                         <action selector="logout:" destination="-1" eventType="touchUpInside" id="11"/>
                     </connections>
                 </button>
-                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8">
-                    <rect key="frame" x="85" y="350" width="150" height="42"/>
+                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8">
+                    <rect key="frame" x="180" y="351" width="120" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                    <state key="normal" title="Cancel" backgroundImage="button-medium-default.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted" backgroundImage="button-medium-pressed.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" red="0.97254908080000002" green="0.58039218189999997" blue="0.2117647231" alpha="1" colorSpace="deviceRGB"/>
                     </state>
                     <connections>
                         <action selector="doNotLogout:" destination="-1" eventType="touchUpInside" id="10"/>
@@ -59,7 +50,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.21568629149999999" green="0.41960787770000002" blue="0.63137257099999999" alpha="1" colorSpace="deviceRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
@@ -80,9 +71,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Background.png" width="320" height="480"/>
         <image name="SpinnerBackground.png" width="80" height="80"/>
-        <image name="button-medium-default.png" width="150" height="42"/>
-        <image name="button-medium-pressed.png" width="150" height="42"/>
     </resources>
 </document>

@@ -37,8 +37,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-
 @interface LogoutController : UIViewController
 {
     UIView *spinnerView;
@@ -50,5 +48,8 @@
 
 @property(nonatomic, retain) IBOutlet UIView *spinnerView;
 @property(nonatomic, retain) IBOutlet UIActivityIndicatorView *spinner;
+@property (retain, nonatomic) IBOutlet UILabel *textLabel;
+@property (retain, nonatomic) IBOutlet UIButton *signOutButton;
+@property (retain, nonatomic) IBOutlet UIButton *cancelButton;
 
 @end

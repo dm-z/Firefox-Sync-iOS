@@ -180,7 +180,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     WeaveAppDelegate *appDelegate = (WeaveAppDelegate *) [[UIApplication sharedApplication] delegate];
     if ([appDelegate canConnectToInternet])
     {
-        [WebPageController openURL:cell.detailTextLabel.text withTitle:cell.textLabel.text];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:cell.detailTextLabel.text]];
+        //[WebPageController openURL:cell.detailTextLabel.text withTitle:cell.textLabel.text];
     }
     else
     {

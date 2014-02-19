@@ -284,7 +284,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
             destination = cell.detailTextLabel.text;
         }
 
-        [WebPageController openURL:destination withTitle:title];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:destination]];
+        //[WebPageController openURL:destination withTitle:title];
     }
     else
     {
