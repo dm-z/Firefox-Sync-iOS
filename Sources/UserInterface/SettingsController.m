@@ -39,7 +39,6 @@
 #import "WeaveAppDelegate.h"
 #import "Stockboy.h"
 #import "AboutScreen.h"
-#import "KeychainItemWrapper.h"
 #import "LogoutController.h"
 #import "UIColor+appColors.h"
 

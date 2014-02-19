@@ -36,10 +36,7 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-#import <QuartzCore/QuartzCore.h>
-
 #import "EasySetupViewController.h"
-#import "WeaveAppDelegate.h"
 #import "Stockboy.h"
 #import "UIColor+appColors.h"
 

@@ -35,21 +35,10 @@
  
  ***** END LICENSE BLOCK *****/
 
-#include <unistd.h>
-
-#import "Store.h"
 #import "Stockboy.h"
 #import "WeaveAppDelegate.h"
-#import "LogoutController.h"
 #import "Reachability.h"
-#import "CryptoUtils.h"
-#import "Fetcher.h"
 #import "WelcomePage.h"
-#import "WebPageController.h"
-
-#import "NSString+SHA.h"
-
-
 
 @implementation UINavigationBar (CustomImage)
 
@@ -71,7 +60,6 @@
 @synthesize tabBrowser;
 @synthesize bookmarkNav;
 @synthesize settings;
-@synthesize webController;
 @synthesize currentOrientation;
 
 - (void)fadeToMainPage
@@ -183,7 +171,6 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     [tabBrowser view];
     [bookmarkNav view];
     [settings view];
-    [webController view];
 
     // Show window
     self.window.rootViewController = tabBarController;
@@ -235,7 +222,6 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
                                               forKey:@"backgroundedAtTime"];
     [self stopProgressSpinners];
     [Stockboy cancel];
-    [webController stopLoadingAndAnimation];
 }
 
 #define FIVE_MINUTES_ELAPSED (60 * 5)
@@ -306,11 +292,6 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"useNativeApps"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 
-    //delete the web browser view, because there's no way to clear the history
-    [webController release];
-    webController = nil;
-    //reload a new web browser view
-    webController = [[WebPageController alloc] initWithNibName:nil bundle:nil];
     //redraw everything
     [self refreshViews];  //make them all ditch their data
 }
@@ -472,9 +453,9 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     WeaveAppDelegate *appDelegate = (WeaveAppDelegate *) [[UIApplication sharedApplication] delegate];
 
-    [appDelegate.webController willRotateToInterfaceOrientation:appDelegate.currentOrientation
-                                                       duration:0];
-    [appDelegate rotateFullscreenView:appDelegate.webController.view
-                        toOrientation:appDelegate.currentOrientation];
+//    [appDelegate.webController willRotateToInterfaceOrientation:appDelegate.currentOrientation
+//                                                       duration:0];
+//    [appDelegate rotateFullscreenView:appDelegate.webController.view
+//                        toOrientation:appDelegate.currentOrientation];
 }
 @end

@@ -36,8 +36,6 @@
  ***** END LICENSE BLOCK *****/
 
 #import "LogoutController.h"
-#import "Store.h"
-#import "CryptoUtils.h"
 #import "Stockboy.h"
 #import "WeaveAppDelegate.h"
 #import "WelcomePage.h"

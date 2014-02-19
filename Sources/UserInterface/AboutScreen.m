@@ -8,8 +8,6 @@
 
 #import "AboutScreen.h"
 #import "WeaveAppDelegate.h"
-#import "Stockboy.h"
-#import "TapActionController.h"
 
 
 

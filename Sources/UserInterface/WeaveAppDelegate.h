@@ -44,7 +44,6 @@
 #import "SearchResultsController.h"
 #import "TabBrowserController.h"
 #import "BookmarkNav.h"
-#import "WebPageController.h"
 #import "SettingsController.h"
 
 //#define TESTING
@@ -56,7 +55,6 @@
     SearchResultsController *searchResults;
     TabBrowserController *tabBrowser;
     BookmarkNav *bookmarkNav;
-    WebPageController *webController;
     SettingsController *settings;
 
     BOOL hasInternetConnectivity;
@@ -96,7 +94,6 @@ clickedButtonAtIndex:(NSInteger)buttonIndex;
 @property(nonatomic, retain) IBOutlet UIWindow *window;
 
 @property(nonatomic, retain) IBOutlet UITabBarController *tabBarController;
-@property(nonatomic, retain) IBOutlet WebPageController *webController;
 
 @property(nonatomic, retain) SearchResultsController *searchResults;
 @property(nonatomic, retain) TabBrowserController *tabBrowser;
