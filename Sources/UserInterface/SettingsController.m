@@ -41,6 +41,7 @@
 #import "AboutScreen.h"
 #import "KeychainItemWrapper.h"
 #import "LogoutController.h"
+#import "UIColor+appColors.h"
 
 
 
@@ -155,10 +156,7 @@
     //and also change the Refresh Button to 'Stop Refresh'
     [syncButton setTitle:NSLocalizedString(@"Stop", @"stop refreshing data")
                 forState:UIControlStateNormal];
-    [syncButton setBackgroundImage:[UIImage imageNamed:@"button-stop.png"]
-                          forState:UIControlStateNormal];
-    [syncButton setBackgroundImage:[UIImage imageNamed:@"button-stop-pressed.png"]
-                          forState:UIControlStateHighlighted];
+    [syncButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
 }
 
 - (void)changeSpinnerMessage:(NSString *)msg
@@ -176,10 +174,7 @@
     //change the button back to 'Refresh'
     [syncButton setTitle:NSLocalizedString(@"Refresh", @"refresh local data")
                 forState:UIControlStateNormal];
-    [syncButton setBackgroundImage:[UIImage imageNamed:@"button-medium-default.png"]
-                          forState:UIControlStateNormal];
-    [syncButton setBackgroundImage:[UIImage imageNamed:@"button-medium-pressed.png"]
-                          forState:UIControlStateHighlighted];
+    [syncButton setTitleColor:[UIColor buttonsColor] forState:UIControlStateNormal];
 }
 
 
