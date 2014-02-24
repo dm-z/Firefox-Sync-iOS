@@ -34,7 +34,7 @@
                 <view contentMode="scaleToFill" id="YZq-kx-y2z" userLabel="ViewForiOS7">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.21568629149999999" green="0.41960787770000002" blue="0.63137257099999999" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="backgroundColor" red="0.21568629145622253" green="0.41960787773132324" blue="0.63137257099151611" alpha="1" colorSpace="deviceRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="38" userLabel="Header">
                     <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -56,7 +56,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" red="0.21568629149999999" green="0.41960787770000002" blue="0.63137257099999999" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="backgroundColor" red="0.21568629145622253" green="0.41960787773132324" blue="0.63137257099151611" alpha="1" colorSpace="deviceRGB"/>
                         </view>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Settings" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="13">
                             <rect key="frame" x="85" y="0.0" width="150" height="44"/>

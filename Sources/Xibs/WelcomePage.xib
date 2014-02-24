@@ -45,7 +45,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.18823531270027161" green="0.32941177487373352" blue="0.56470590829849243" alpha="1" colorSpace="deviceRGB"/>
+            <color key="backgroundColor" red="0.21568629145622253" green="0.41960787773132324" blue="0.63137257099151611" alpha="1" colorSpace="deviceRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

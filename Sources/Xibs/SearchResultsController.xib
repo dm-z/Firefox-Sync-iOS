@@ -23,7 +23,7 @@
                 <view contentMode="scaleToFill" id="ZgO-2z-W8U" userLabel="viewForiOS7">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.18823531269999999" green="0.32941177490000001" blue="0.5647059083" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="backgroundColor" red="0.21568629145622253" green="0.41960787773132324" blue="0.63137257099151611" alpha="1" colorSpace="deviceRGB"/>
                 </view>
                 <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="68" userLabel="Logo and Search">
                     <rect key="frame" x="0.0" y="20" width="320" height="549"/>
@@ -37,7 +37,7 @@
                         <searchBar opaque="NO" multipleTouchEnabled="YES" contentMode="top" searchBarStyle="minimal" text="" placeholder="Search Tabs, Bookmarks, History" id="32">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.18823531269999999" green="0.32941177490000001" blue="0.5647059083" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="backgroundColor" red="0.21568629145622253" green="0.41960787773132324" blue="0.63137257099151611" alpha="1" colorSpace="deviceRGB"/>
                             <color key="tintColor" red="0.97254908080000002" green="0.58039218189999997" blue="0.2117647231" alpha="1" colorSpace="deviceRGB"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             <connections>
