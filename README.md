@@ -21,8 +21,10 @@ Plans on improving
 ------------------
 
 1. ~~Add support for 4-inch displays~~
-2. Change custom graphics to native iOS7 interface.
+2. ~~Change custom graphics to native iOS7 interface.~~
 3. Add external browsers to open menu (Chrome, Safari etc.)
 4. Add cocoapods.
 5. Remove old frameworks/change for new ones.
 6. Maybe iPad version.
+
+Project stopped, because Mozilla changed sync logic to new accounts.
