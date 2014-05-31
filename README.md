@@ -1,5 +1,3 @@
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/DZozulya/firefox-sync-ios/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
 Firefox-sync-for-iOS
 ===============
 
