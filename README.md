@@ -25,4 +25,4 @@ Plans on improving
 5. Remove old frameworks/change for new ones.
 6. Maybe iPad version.
 
-Project stopped, because Mozilla changed sync logic to new accounts.
+Project stopped, because Mozilla changed sync logic. Now sync works through Mozilla accounts.
